@@ -1,0 +1,141 @@
+
+
+#cartpagemain{
+    width: 90%;
+    height: auto;
+    border: 1px solid red;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px,2fr));
+    gap: 3rem;
+    /* background-color:rgb(240, 240, 245); */
+}
+#cartpagemain>div{
+    width: 100%;
+    /* height: 100vh; */
+    border: 1px solid green;
+}
+#rightfirst{
+    width: 100%;
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+}
+
+.cartimg{
+   margin-left: 2rem;
+}
+#applycoupon{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 1rem;
+}
+
+/* #viewall{
+    background-color: blue;
+    padding: 5px 80px 5px 80px;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+} */
+
+#inputfield{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+input{
+    padding: 10px 20px 10px 20px;
+    border: none;
+}
+
+#apply{
+    padding: 10px 20px 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+#payment{
+    text-align: left;
+}
+#rightbottom{
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+}
+.details{
+   display: flex;
+   text-align: center;
+   align-items: center;
+   justify-content: space-between;
+}
+.details>div{
+    text-align: left;
+    /* border: 1px solid red; */
+}
+.details>div:nth-child(2){
+    text-align: right;
+}
+#couponapply{
+    text-align: left;
+}
+#placeorder{
+    padding: 13px 80px 13px 80px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    font-size: 18px;
+    margin-top: 3rem;
+}
+#placeorder:hover{
+    background-color: brown;
+}
+
+#rightmiddle{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    /* padding-top: 2rem; */
+    padding-bottom: 2rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+#rightbottom{
+    background-color: white;
+    border-radius: 1.5rem;
+   
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    /* padding: 20px 40px ; */
+}
+#rightfirst{
+   background-color: white;
+   padding-top: 2rem;
+   /* padding-bottom: 5rem; */
+   /* border-radius: 1.5rem; */
+}
+#localid{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    border: 1px solid red;
+    gap: 2rem;
+}
+#localid>div{
+    border: 1px solid red;
+}
+#pricediv{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
