@@ -18,7 +18,6 @@ app.use(express.json())
 
 app.get("/",(req,res) => {
     res.send("Welcome Home to Frontend")
-    // console.log("Welcome Home");
 })
 
 app.use("/fruits", Fruits)
