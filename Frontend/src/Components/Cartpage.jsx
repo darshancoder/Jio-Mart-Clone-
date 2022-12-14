@@ -6,33 +6,90 @@ import {CiMemoPad} from "react-icons/ci"
 import {MdPayment} from "react-icons/md"
 import { Viewall } from './Applycoupon';
 import {CiPercent} from "react-icons/ci"
+import {AiFillPlusCircle,AiFillMinusCircle} from "react-icons/ai"
+import { useState } from 'react';
 function Cartpage(props) {
     let localdata=JSON.parse(localStorage.getItem("alldata")) || []
+    let [count,setcount]=useState(1)
+
+    let handleincrease=()=>{
+        setcount(count+1)
+    }
+    let handlereduce=()=>{
+        setcount(count-1)
+    }
+    let mrp=0
+    let price=0
+    localdata.forEach((el)=>{
+        mrp+=+el.mrp
+        price+=+el.price
+
+    })
+    let main=price-150
+    let [viewall,setviewall]=useState(false)
+    let handlestate=(state)=>{
+        setviewall(true)
+       
+    }
+    let [input,setinput]=useState("")
+    let [inputdis,setinputdis]=useState(false)
+    let handleclick=()=>{
+        if(input=="masai1"){
+            setinputdis(true)
+            setinput("")
+        }
+        // alert("Invalid Coupon Code Please Enter Correct Coupon")
+      
+    }
     return (
         <>
             <div id="cartpagemain">
                 <div id='cartpageleft'>
-                <h2>Fashion Basket</h2>
+                <h3 id='fashionbasket'>Fashion Basket ({localdata.length} Items)  </h3>
                     {
                         localdata.length>0 && localdata.map((el)=>{
                             return (
                                 <div id='localid'>
-                                   
-                                     <div>
-                                        <img src={el.imageurl} alt="" />
-                                     </div>
-                                     <div>
-                                        <div><h3>{el.name}</h3></div>
-                                        <div id='pricediv'>
-                                            <div><h5>{el.price}</h5></div>
-                                            <div><p>{el.mrp}</p></div>
-                                            <div>
-                                                <p>You Save {el.mrp-el.price}</p>
-                                            </div>
+                                   <div>
+                                    <img src={el.imageurl} alt="" />
+                                   </div>
+                                   <div id='localidright'>
+                                    <div>
+                                        <h4 id='nameid'>{el.name}</h4>
+                                    </div>
+                                    <div id='pricediv'>
+                                        <div>
+                                        <h4 id='priceid'>₹{el.price}</h4>
                                         </div>
-                                        <div></div>
-
-                                     </div>
+                                        <div>
+                                            <p id='mrpid' > ₹{el.mrp}</p>
+                                        </div>
+                                        <div>
+                                            <p id='saveid'>You Save ₹{el.mrp-el.price}</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 id='sizeid'>
+                                            Size:L
+                                        </h4>
+                                    </div>
+                                    <div id='finalbutton'>
+                                        <div>
+                                        <p>SAVE FOR LATER</p>
+                                        </div>
+                                        {/* <div id='increasingbutton'>
+                                            <div>
+                                                <button disabled={count==0} onClick={handlereduce}>-</button>
+                                            </div>
+                                            <div>
+                                                <button>{count}</button>
+                                            </div>
+                                            <div>
+                                                <button disabled={count==3} onClick={handleincrease}>+</button>
+                                            </div>
+                         </div> */}
+                                    </div>
+                                   </div>
                                 </div>
                             )
                         })
@@ -54,25 +111,38 @@ function Cartpage(props) {
                         </div>
                     </div>
                     <div  id='rightmiddle' >
+                        
                         <div id='applycoupon' >
                             <div>
                                 <h2 id='couponapply'>Apply Coupon</h2>
                             </div>
+                            {inputdis?
+                        "":
                             <div>
                                <button id='viewall'>
-                                <Viewall/>
+                                <Viewall handlestate={handlestate} disabled={inputdis==true} />
                                </button>
                             </div>
+}
                         </div>
+                        
+
+                        {
+                            viewall?"":
+                        
                         <div id='inputfield'>
+                           
                             <div>
                                 <CiPercent size={25} />
-                            <input type="text" placeholder='Enter Coupon Code Here' />
+                               
+                            <input type="text" placeholder='Enter Coupon Code Here' value={input} onChange={(e)=>setinput(e.target.value)}  />
                             </div>
                             <div>
-                                <button id='apply'>Apply</button>
+                                <button id='apply' onClick={handleclick}>Apply</button>
                             </div>
+
                         </div>
+}
                     </div>
                         <h2 id='payment'>Payment Details</h2>
                     <div id='rightbottom'>
@@ -81,7 +151,7 @@ function Cartpage(props) {
                             <h4>MRP Total</h4>
                             </div>
                             <div>
-                                price
+                           <h4> ₹ {mrp}/-</h4>
                             </div>
                             
                         </div>
@@ -90,18 +160,49 @@ function Cartpage(props) {
                             <h4>Product Discount</h4>
                             </div>
                             <div>
-                                price
+                           <h4> ₹ {mrp-price}/-</h4>
                             </div>
                         </div>
+                        {
+                            viewall?
                         <div className='details'>
-                        <div>
+                            <div>
+                            <h4>Coupon Discount</h4>
+                            </div>
+                           
+                            <div>
+                           <h4> ₹ {150}/-</h4>
+                            </div>
+                        </div>: ""
+                        }
+
+{
+                            inputdis?
+                        <div className='details'>
+                            <div>
+                            <h4>Favorite Coupon Discount</h4>
+                            </div>
+                           
+                            <div>
+                           <h4> ₹ {150}/-</h4>
+                            </div>
+                        </div>: ""
+                        }
+                        
+                        <div className='details'>
+                            <div>
                             <h4>Total Amount</h4>
                             </div>
-                            {/* <hr /> */}
+                           
                             <div>
-                                price
+                           {
+                            viewall || inputdis?
+                            <h4>₹{main}/-</h4>:
+                            <h4> ₹{price}/-</h4>
+                           }
                             </div>
                         </div>
+                    
                         
                        
                     </div>

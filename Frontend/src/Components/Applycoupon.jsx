@@ -11,9 +11,16 @@ import {
     useDisclosure
   } from '@chakra-ui/react';
   import React from 'react';
-function Viewall() {
+import { useState } from 'react';
+function Viewall({handlestate}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
+    let [state,setstate]=useState(false)
+    let handleradio=()=>{
+      setstate(true)
+      // console.log(state,"state")
+      handlestate(state)
+    }
   
     return (
       <>
@@ -33,7 +40,7 @@ function Viewall() {
   
             <DrawerBody>
               <h1>Coupons</h1>
-              <input type="radio" />
+              <input type="radio" onClick={handleradio} />
               <label htmlFor="">
               <label htmlFor="">SAVE 150</label>
                 <p>Flat 150 off on Minimum purchase of 999 (Only for Selected Fashion products)</p>
