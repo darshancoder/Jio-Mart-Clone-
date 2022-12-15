@@ -1,0 +1,16 @@
+@media screen and (max-width: 640px){
+    .sliderdiv{
+        width:120%;
+
+    }
+    .mainsliderdiv{
+        width:190%;
+        background-image: 20px;
+    }
+
+    .sliderdiv>img{
+        width:100%;
+       
+    }
+
+}

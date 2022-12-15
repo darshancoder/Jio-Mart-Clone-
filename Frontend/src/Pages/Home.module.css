@@ -1,0 +1,647 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.secondimg>img{
+    height:200px;
+
+}
+.secondimg{
+    margin-top: 15px;
+}
+
+.secondimg1>img{
+    height:200px;
+   margin: auto;
+   width:95%;
+}
+.secondimg1{
+    margin-top: 15px;
+ 
+}
+
+.secondimg2>img{
+    height:280px;
+  width:100%
+}
+.secondimg2{
+    margin-top: 15px;
+ 
+}
+     
+.shopandshadow{
+    width:90%;
+    margin:auto;
+}
+.shopandshadow>h1{
+    font-size: 20px;
+    color:black;
+    font-weight: bold;
+}
+.shadowgrid{
+    display: flex;
+    /* border:1px solid black; */
+    height:250px;
+
+}
+.shadowgrid>div{
+    /* border:1px solid green; */
+    width:220px;
+    height:200px;
+}
+
+.safeDiv>img{
+    width:98%;
+    height:180px;
+    margin:auto;
+}
+
+               /* 2img div */
+               .twoslidediv{
+                display: flex;
+                /* border:2px solid black; */
+                height:212px;
+                width:95%;
+                margin:auto;
+                margin-top: 5px;
+            }
+            .twoslidediv>div{
+                /* border:1px solid red; */
+                width:50%;
+            }
+   /* shop catgt          */
+
+   
+.offerday{
+    width:90%;
+    margin:auto;
+    height:600px;
+    margin-top: 20px;
+    /* border:3px solid brown; */
+    padding:10px;
+    margin-bottom: 25px;
+   
+ } 
+ 
+ .offerday>div{
+     /* border:2px solid green; */
+     height:280px;
+     margin-bottom: 15px;
+ }
+ 
+ .offerdayBox>div{
+     /* border:1px solid red; */
+     height:50px;
+     display: flex;
+     width:50px;
+ }
+ 
+ .newdiv{
+     display: flex;
+     gap:15px;
+ }
+ 
+ .newdiv>div{
+     /* border:1px solid orange; */
+     width:340px;
+     background: url("https://www.jiomart.com/assets/version1664394743/smartweb/images/offer_bg.png") no-repeat top center;
+     background-size: 100%;
+     background-color:#efd6da !important;
+     border-radius: 8px;
+     cursor: pointer;
+     padding: 20px;
+     
+ 
+ }
+ /* .newdiv>div:hover{
+ 
+ } */
+ 
+ .newdiv>div>span{
+     color: #fff;
+     font-size: 16px;
+     text-transform: uppercase;
+     text-align: center;
+     margin-top: 10px;
+     margin-left: 30%;
+    
+    }
+ .newdiv>div>img{
+     margin-left: 20%;
+     height:150px;
+     width:150px;
+    }  
+   
+    .newdiv>div>h3{
+     text-align: center;
+     font-weight: bold;
+ 
+    } 
+ 
+   .offerday>h1{
+     padding:10px 10px;
+     font-size: 20px;
+     font-weight: bold;
+   } 
+
+   /* shop categoires 2 again */
+
+  .shopandshadow1{
+    width:90%;
+    margin:auto;
+}
+.shopandshadow1>h1{
+    font-size: 20px;
+    color:black;
+    font-weight: bold;
+}
+.shadowgrid1{
+    display: flex;
+    /* border:1px solid black; */
+    height:250px;
+    gap:8px;
+    padding: 10px;
+
+}
+.shadowgrid1>div{
+    border:1px solid rgb(180, 178, 178);
+    width:220px;
+    height:200px;
+    padding: 15px;
+    border-radius: 5px;
+}  
+
+.shadowgrid1>div>img{
+    height:146px;
+    width:146px;
+  
+}
+.shadowgrid1>div>h3{
+    text-align: center;
+    font-weight: bold;
+}
+ 
+  /* 700h banner poster */
+           
+  .banner {
+    display: block;
+    /* border:1px solid black; */
+    /* height:720px; */
+    width:95%;
+    margin:auto;
+   
+}
+
+.banner>div{
+    /* border:1px solid green; */
+  display: flex;
+  width:100%;
+  height:400px;
+  gap:20px;
+  margin-bottom: 35px;
+}
+
+.banner>div>div{
+    width:50%;
+    /* border:1px solid orange; */
+
+}
+
+.banner>div>div>img{
+    width:100%;
+}
+
+                           /* 8grid again */
+                           .offerday1{
+                            width:90%;
+                            margin:auto;
+                            height:600px;
+                            margin-top: 20px;
+                            /* border:3px solid brown; */
+                            padding:10px;
+                            margin-bottom: 25px;
+                           
+                         } 
+                         
+                         .offerday1>div{
+                             /* border:2px solid green; */
+                             height:280px;
+                             margin-bottom: 15px;
+                         }
+                         
+                         .offerdayBox1>div{
+                             /* border:1px solid red; */
+                             height:50px;
+                             display: flex;
+                             width:50px;
+                         }
+                         
+                         .newdiv1{
+                             display: flex;
+                             gap:15px;
+                         }
+                         
+                         .newdiv1>div{
+                             /* border:1px solid orange; */
+                             width:340px;
+                             background: url("https://www.jiomart.com/assets/version1664394743/smartweb/images/offer_bg.png") no-repeat top center;
+                             background-size: 100%;
+                             background-color:#6bf1c9 !important;
+                             border-radius: 8px;
+                             cursor: pointer;
+                             padding: 20px;
+                             
+                         
+                         }
+                         /* .newdiv>div:hover{
+                         
+                         } */
+                         
+                         .newdiv1>div>span{
+                             color: #fff;
+                             font-size: 16px;
+                             text-transform: uppercase;
+                             text-align: center;
+                             margin-top: 10px;
+                             margin-left: 30%;
+                            
+                            }
+                         .newdiv1>div>img{
+                             margin-left: 20%;
+                             height:150px;
+                             width:150px;
+                            }  
+                           
+                            .newdiv1>div>h3{
+                             text-align: center;
+                             font-weight: bold;
+                         
+                            } 
+                         
+                           .offerday1>h1{
+                             padding:10px 10px;
+                             font-size: 20px;
+                             font-weight: bold;
+                           } 
+   
+                           
+              /* 2images bottom */
+              .imagetwo{
+                display: flex;
+                width:95%;
+                height:400px;
+                gap:20px;
+                margin:auto;
+                /* margin-bottom: 35px; */
+            }   
+            
+            .imagetwo>div{
+                width:50%;
+                /* border:2px solid brown */
+            }
+
+ /* offers on groceries */
+
+
+ .offerday2{
+    width:90%;
+    margin:auto;
+    height:600px;
+    margin-top: 20px;
+    /* border:3px solid brown; */
+    padding:10px;
+    margin-bottom: 25px;
+   
+ } 
+ 
+ .offerday2>div{
+     /* border:2px solid green; */
+     height:280px;
+     margin-bottom: 15px;
+ }
+ 
+ .offerdayBox2>div{
+     /* border:1px solid red; */
+     height:50px;
+     display: flex;
+     width:50px;
+ }
+ 
+ .newdiv2{
+     display: flex;
+     gap:15px;
+ }
+ 
+ .newdiv2>div{
+     /* border:1px solid orange; */
+     width:340px;
+     background: url("https://www.jiomart.com/assets/version1664394743/smartweb/images/offer_bg.png") no-repeat top center;
+     background-size: 100%;
+     background-color: #96c4f6;
+     border-radius: 8px;
+     cursor: pointer;
+     padding: 20px;
+     
+ 
+ }
+ /* .newdiv2>div:hover{
+ 
+ } */
+ 
+ .newdiv2>div>span{
+     color: #fff;
+     font-size: 16px;
+     text-transform: uppercase;
+     text-align: center;
+     margin-top: 10px;
+     margin-left: 30%;
+    
+    }
+ .newdiv2>div>img{
+     margin-left: 20%;
+     height:150px;
+     width:150px;
+    }  
+   
+    .newdiv2>div>h3{
+     text-align: center;
+     font-weight: bold;
+ 
+    } 
+ 
+   .offerday2>h1{
+     padding:10px 10px;
+     font-size: 20px;
+     font-weight: bold;
+   }     
+
+  /* 700hn image again bottom */
+
+  .banner1 {
+    display: block;
+    /* border:1px solid black; */
+    /* height:720px; */
+    width:95%;
+    margin:auto;
+   
+}
+
+.banner1>div{
+    /* border:1px solid green; */
+  display: flex;
+  width:100%;
+  height:400px;
+  gap:20px;
+  margin-bottom: 35px;
+}
+
+.banner1>div>div{
+    width:50%;
+    /* border:1px solid orange; */
+
+}
+
+.banner1>div>div>img{
+    width:100%;
+}      
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 640px){
+    .secondimg>img{
+        height:150px;
+        width:1500px;
+       margin:auto;
+    
+    }
+
+    .secondimg1>img{
+        height:150px;
+        width:1500px;
+        margin:auto;
+     
+    }
+    .secondimg1{
+        margin-top: 10px;
+        margin:auto;
+    }
+    .secondimg2>img{
+        height:180px;
+        margin:auto;
+     
+    }
+    .secondimg2{
+        margin-top: 10px;
+        margin:auto;
+     
+    }
+
+    .safeDiv>img{
+       margin-top:-120px ;
+        height:120px;
+       width:100%;
+    }
+
+    .twoslidediv{
+        height:200px;
+        margin-top: 15px;
+    }
+
+    /* shop catg */
+
+    .offerday{
+        height:600px;
+        /* margin-top: 10px; */
+        margin-bottom: 25px;
+        margin-top: -50px;
+       
+     } 
+
+     .offerday>div{
+        /* border:2px solid green; */
+        height:180px;
+        margin-bottom: 15px;
+    }
+    .newdiv>div>img{
+        margin-left: 5%;
+        height:100px;
+        width:100px;
+        margin-top: -20px;
+       }  
+
+       .newdiv>div>span{
+        font-size: 8px;
+        margin-top: 10px;
+        margin-left: 30%;
+       
+       }
+
+       .newdiv>div{
+        /* border:2px solid orange; */
+        width:340px;
+        cursor: pointer;
+      
+        
+    
+    }
+    .newdiv>div>h3{
+        font-weight: bold;
+        font-size: 8px;
+    
+       } 
+      /* shop categoires 2 again */
+
+  .shopandshadow1{
+   margin-top: -160px;
+}
+.shadowgrid1>div>img{
+    height:100px;
+    width:136px;
+  
+}
+
+.shadowgrid1>div>h3{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+          /* 7banner */
+.banner>div{
+  gap:20px;
+  margin-bottom:-195px;
+}
+
+.banner {
+    display: block;
+    /* border:1px solid black; */
+    height:600px;
+
+   
+}
+.banner>div>div{
+    width:50%;
+    /* border:1px solid orange; */
+    height:180px;
+
+}
+.offerday1{
+    height:600px;
+    /* margin-top: 10px; */
+    margin-bottom: 25px;
+    margin-top: -20px;
+   
+ } 
+
+ .offerday1>div{
+    /* border:2px solid green; */
+    height:180px;
+    margin-bottom: 15px;
+}
+.newdiv1>div>img{
+    margin-left: 5%;
+    height:100px;
+    width:100px;
+    margin-top: -20px;
+   }  
+
+   .newdiv1>div>span{
+    font-size: 8px;
+    margin-top: 10px;
+    margin-left: 30%;
+   
+   }
+
+   .newdiv1>div{
+    /* border:2px solid orange; */
+    width:340px;
+    cursor: pointer;
+  
+    
+
+}
+.newdiv1>div>h3{
+    font-weight: bold;
+    font-size: 8px;
+
+   } 
+                 /* 2images bottom */
+.imagetwo{
+    height:180px;
+    gap:20px;
+    margin:auto;
+   margin-top: -160px;
+}   
+
+.imagetwo>div{
+    width:50%;
+    /* border:2px solid brown */
+}
+
+.offerday2{
+    height:600px;
+    /* margin-top: 10px; */
+    margin-bottom: 25px;
+    margin-top: -20px;
+   
+ } 
+
+ .offerday2>div{
+    /* border:2px solid green; */
+    height:180px;
+    margin-bottom: 15px;
+}
+.newdiv2>div>img{
+    margin-left: 5%;
+    height:100px;
+    width:100px;
+    margin-top: -20px;
+   }  
+
+   .newdiv2>div>span{
+    font-size: 8px;
+    margin-top: 10px;
+    margin-left: 30%;
+   
+   }
+
+   .newdiv2>div{
+    width:340px;
+    cursor: pointer;
+  
+    
+
+}
+.newdiv2>div>h3{
+    font-weight: bold;
+    font-size: 8px;
+
+   } 
+        
+         .banner1>div{
+            gap:20px;
+            margin-bottom:-210px;
+          }
+          
+          .banner1 {
+              display: block;
+              height:600px;
+              margin-top: -170px;
+          
+             
+          }
+          .banner1>div>div{
+              width:50%;
+              height:180px;
+          
+          }
+}
+
+
+         
+        
