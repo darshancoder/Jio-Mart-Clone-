@@ -1,0 +1,192 @@
+.navbarblock{
+    /* display: block; */
+    position: fixed;
+    top:0;
+    z-index: 100;
+    width:100%;
+}
+
+.navbar{
+    width:100%;
+    height: 72px;
+    box-sizing: border-box;
+    background: #008ecc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+    position: relative;
+    top:0;
+}
+
+.hambueger{
+    font-size: 26px;
+    color:white;
+    cursor: pointer;
+}
+.inputSearch{
+    width:670px;
+    height:40px;
+    border: 0;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 14px;
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px 16px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.userdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.cartNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.carticon{
+    font-size: 20px;
+    color:white;
+}
+h4{
+    color:white;
+}
+.usericons{
+    color:white;
+    font-size: 20px;
+}
+
+                          /* navbar-2 */
+#newnav{
+    width:100%;
+    height:40px;
+    background-color: #f2e8e8;
+     display: flex;
+     align-items: center;
+   justify-content: center;
+   gap:80px;
+}  
+
+ .locationdiv{
+    width:70px;
+    color:rgb(93, 92, 92);
+    font-weight: 400;
+    font-size: 14px;
+} 
+
+.navbar2style1 {
+   display: flex;
+   align-items: center;
+   gap:1px;
+
+}
+.locationIcon{
+    font-size: 24px;
+    color:#00000080
+}
+.navbar2style1>p{
+    color:black;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 250px;
+}
+
+              /* slider drawer */
+
+              .drawerslide>h2{
+                color:white;
+                }               
+                
+                .divone>div{
+                padding:12px 16px;
+                font:14px
+                }
+                
+                .silverdiv{
+                  border:2px solid rgb(121, 121, 121);
+                  background-color:rgb(121, 121, 121) ;
+                }
+                
+                .contactus>h1{
+                    color:black;
+                    padding: 0px 0px 12px;
+                    font-weight: bold;
+                    margin-top: 8px;
+                    
+                }
+                .contactus{
+                    margin: 0px 0px 10px;
+                }
+                
+                .contactus>div{
+                    padding: 0px 0px 12px;
+                }
+                
+                .buttnslider{
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 12px 0px 10px;
+                 
+                }
+                
+                .buttnslider>Button{
+                    width:45%;
+                    background-color: #008ecc;
+                    color:white;
+                    border:1px solid white
+                }
+
+@media screen and (max-width: 640px){
+.inputSearch{
+    width:150px;
+    font-size: 10px;
+  
+}
+
+     .userdiv>h4{
+        font-size: 12px;
+     }
+
+     .navbar>div>img{
+       width:50px;
+     }
+
+     .navbar2style1>p{
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .locationdiv{
+        width:55px;
+        font-weight: 400;
+        font-size: 12px;
+    } 
+
+    .locationIcon{
+        font-size: 14px;
+        
+    }
+
+    #newnav{
+       gap:10px 
+    }
+   
+    .spanstyle{
+    font-weight: 400;
+    font-size: 12px;
+    }
+}
