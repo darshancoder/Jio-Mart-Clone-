@@ -1,0 +1,14 @@
+.searchcontainer{
+   display:block;
+    width:40%;
+    margin:auto;
+    background-color: white;
+}
+.searchcontainer>div{
+    flex-direction: column;
+}
+
+.searchcontainer>div>h3{
+    font-size: 12px;
+    text-align:start ;
+}
