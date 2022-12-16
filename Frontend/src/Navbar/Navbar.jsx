@@ -27,6 +27,7 @@ import {
 import { useThrottle } from "use-throttle";
 import { searchData } from "../Every/searchdata";
 import { SearchBox } from "./SearchBox";
+import Products from "../Components/ProductPage/Products";
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -67,7 +68,7 @@ export const Navbar = () => {
     setQuery(throttletext);
   }, [setQuery, throttletext]);
 
-  console.log(suggestion);
+  // console.log(suggestion);
 
   return (
     // navbar-1
