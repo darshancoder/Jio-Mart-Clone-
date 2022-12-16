@@ -7,9 +7,9 @@ import { Navbar } from './Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <Login></Login>
+      {/* <Login></Login> */}
    {/* <Signup/> */}
-   {/* <Account></Account> */}
+   <Account></Account>
     </div>
   );
 }
