@@ -1,6 +1,8 @@
 const express = require("express")
 require("dotenv").config()
 const {connect } = require("./Config/db")
+const {athuenticate} = require("./Middlewares/authentication")
+const {userRouter} = require("./Routers/user.routes")
 const { Beauty } = require("./Routers/Beauty.route")
 const { Dairy } = require("./Routers/Dairy.route")
 const { Electronics } = require("./Routers/Electronics.route")
@@ -19,6 +21,9 @@ app.use(express.json())
 app.get("/",(req,res) => {
     res.send("Welcome Home to Frontend")
 })
+
+// user Signup/login
+app.use("/users",userRouter)
 
 app.use("/fruits", Fruits)
 app.use("/dairy", Dairy)
