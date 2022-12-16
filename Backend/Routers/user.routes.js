@@ -11,6 +11,10 @@ userRouter.get("/", async (req, res) => {
 });
 
 userRouter.post("/signup", async (req, res) => {
+
+  const { Fname,Lname, email, password } = req.body;
+  const UserPresent = await UserModel.findOne({ email });
+
   const { name, email, password } = req.body;
   const UserPresent = await UserModel.find({ email });
   if (UserPresent?.email) {
@@ -21,6 +25,14 @@ userRouter.post("/signup", async (req, res) => {
         const newUser = new UserModel({
           email: email,
           password: hash,
+          Fname: Fname,
+          Lname:Lname,
+        });
+        await newUser.save();
+      });
+      res.send({ User: "User Created Successfully!" });
+      // console.log(newUser);
+
           name: name,
         });
         await newUser.save();
