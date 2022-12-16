@@ -35,7 +35,6 @@ app.use("/otp",userNumRouter)
 //Admin Login
 app.use("/admin",adminRouter)
 
-
 app.use("/fruits", Fruits)
 app.use("/dairy", Dairy)
 app.use("/staples", Staples)

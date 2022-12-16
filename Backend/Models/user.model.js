@@ -9,6 +9,15 @@ const userSchema = mongoose.Schema({
     password:{type:String, required:true},
     dateOfBirth:Date,
     age:{type:Number},
+
+    name:{type:String, required:true},
+    city:{type:String},
+    email:{type:String, required:true},
+    password:{type:String, required:true},
+    dateOfBirth:Date,
+    age:{type:Number, required:true}
+
+
 },{
     versionKey:false
 })
