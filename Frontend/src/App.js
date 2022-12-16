@@ -2,6 +2,7 @@ import './App.css';
 import Login from './login_signup/Login';
 import Signup from './login_signup/Signup';
 import Account from './my_account/Account';
+import { Navbar } from './Navbar/Navbar';
 
 function App() {
   return (
@@ -12,5 +13,9 @@ function App() {
     </div>
   );
 }
+
+
+
+
 
 export default App;
