@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config()
 const {connect } = require("./Config/db")
 const {athuenticate} = require("./Middlewares/authentication")
+const {adminAccessRouter} = require("./Routers/adminAccess.Route")
 const {userRouter} = require("./Routers/user.routes")
 const {adminRouter} = require("./Routers/admin.routes")
 const {userNumRouter} = require("./Routers/userNum.routes")
@@ -34,6 +35,9 @@ app.use("/users",userRouter)
 app.use("/otp",userNumRouter)
 //Admin Login
 app.use("/admin",adminRouter)
+//admin CRUD
+app.use("/admincrud",adminAccessRouter)
+
 
 app.use("/fruits", Fruits)
 app.use("/dairy", Dairy)
