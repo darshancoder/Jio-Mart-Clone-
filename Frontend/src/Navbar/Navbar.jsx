@@ -403,3 +403,4 @@ export const Navbar = () => {
     </div>
   );
 };
+// day-1 Trying to solve the conflict
