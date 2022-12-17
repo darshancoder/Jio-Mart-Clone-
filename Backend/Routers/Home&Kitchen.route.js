@@ -5,8 +5,9 @@ const { HomeKitchenModel } = require("../Models/HomeKitchen.model");
 const HomeKitchen = express.Router();
 
 HomeKitchen.get("/", async (req, res) => {
+  const {orderBy}=req.query
   try {
-    const product = await HomeKitchenModel.find();
+    const product =  orderBy.length == 0 ? await HomeKitchenModel.find() : await HomeKitchenModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);

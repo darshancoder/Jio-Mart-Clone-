@@ -5,8 +5,9 @@ const { DairyModel } = require("../Models/Dairy.model");
 const Dairy = express.Router();
 
 Dairy.get("/", async (req, res) => {
+  const {orderBy}= req.query
   try {
-    const product = await DairyModel.find();
+    const product =  orderBy.length == 0 ? await DairyModel.find() : await DairyModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);
