@@ -1,0 +1,44 @@
+
+
+#cartpageleftmain{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+
+
+#cartpageleftmainright{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+}
+/* #cartpageleftmainright>div{
+    border: 1px solid green;
+} */
+#cartpageleftmainright>div:nth-child(4){
+    margin-top: 2rem;
+}
+
+.houseno{
+    line-height: 2px;
+     /* text-align-last: auto; */
+     text-align: start ;
+}
+
+#default{
+    background-color: white;
+    border: none;
+    color:red;
+    cursor: pointer;
+}
+#deliveryadd{
+    text-align: left;
+    /* background-color: teal; */
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

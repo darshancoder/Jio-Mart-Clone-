@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cartpage from './Cartpage';
 import Data from './local';
+import Ordersummary from './Ordersummary';
+import { Payment } from './Payment';
 import Products from './ProductPage/Products';
 
 function Allroutes(props) {
@@ -19,6 +21,8 @@ function Allroutes(props) {
             <Route path='/makeup' element={<Products url={`makeup`}/>} />
             <Route path='/autocare' element={<Products url={`autocare`}/>} />
             <Route path='/toysgames' element={<Products url={`toysgames`}/>} />
+            <Route path='/ordersummary' element={<Ordersummary/>}/>
+            <Route path='/payment' element={<Payment/>}/>
         </Routes>
     );
 }
