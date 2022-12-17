@@ -5,8 +5,9 @@ const { StaplesModel } = require("../Models/Staples.model");
 const Staples = express.Router();
 
 Staples.get("/", async (req, res) => {
+  const {orderBy} = req.query
   try {
-    const product = await StaplesModel.find();
+    const product =  orderBy.length == 0 ? await StaplesModel.find() : await StaplesModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);

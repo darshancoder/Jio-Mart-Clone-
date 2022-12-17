@@ -5,6 +5,7 @@ import Data from './local';
 import Ordersummary from './Ordersummary';
 import { Payment } from './Payment';
 import Products from './ProductPage/Products';
+import ProductDetails from './ProductPage/ProductDetails';
 
 function Allroutes(props) {
     return (
@@ -21,8 +22,6 @@ function Allroutes(props) {
             <Route path='/makeup' element={<Products url={`makeup`}/>} />
             <Route path='/autocare' element={<Products url={`autocare`}/>} />
             <Route path='/toysgames' element={<Products url={`toysgames`}/>} />
-            <Route path='/ordersummary' element={<Ordersummary/>}/>
-            <Route path='/payment' element={<Payment/>}/>
         </Routes>
     );
 }

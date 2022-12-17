@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const apples_pearsSchema = mongoose.Schema({
   image: String,
   title: String,
-  price: String,
+  price: Number,
   userID: String,
 },{
   versionKey:false
