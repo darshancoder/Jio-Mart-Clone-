@@ -10,28 +10,28 @@ adminRouter.get("/", async (req, res) => {
   res.send(adminData);
 });
 
-adminRouter.post("/adminsignup", async (req, res) => {
-  const { adminID, password } = req.body;
-  const AdminPresent = await AdminModel.findOne({ adminID });
-  if (AdminPresent?.adminID) {
-    res.send({ Admin: "Admin already exists!" });
-  } else {
-    try {
-      bcrypt.hash(password, 8, async (e, hash) => {
-        const newUser = new AdminModel({
-          adminID: adminID,
-          password: hash,
-        });
-        await newUser.save();
-      });
-      res.send({ Admin: "Admin Created Successfully!" });
-      // console.log(newUser);
+// adminRouter.post("/adminsignup", async (req, res) => {
+//   const { adminID, password } = req.body;
+//   const AdminPresent = await AdminModel.findOne({ adminID });
+//   if (AdminPresent?.adminID) {
+//     res.send({ Admin: "Admin already exists!" });
+//   } else {
+//     try {
+//       bcrypt.hash(password, 8, async (e, hash) => {
+//         const newUser = new AdminModel({
+//           adminID: adminID,
+//           password: hash,
+//         });
+//         await newUser.save();
+//       });
+//       res.send({ Admin: "Admin Created Successfully!" });
+//       // console.log(newUser);
 
-    } catch (e) {
-      res.send({ e: e.message });
-    }
-  }
-});
+//     } catch (e) {
+//       res.send({ e: e.message });
+//     }
+//   }
+// });
 
 adminRouter.post("/adminlogin", async(req,res) => {
   const {adminID,password} = req.body
