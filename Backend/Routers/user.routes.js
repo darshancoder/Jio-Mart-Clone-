@@ -37,23 +37,28 @@ userRouter.post("/signup", async (req, res) => {
 userRouter.post("/login", async(req,res) => {
   const {email,password} = req.body
   const isPresent = await UserModel.findOne({email})
+try{
   if(isPresent){
-      const id = isPresent._id
-      const hash_password = isPresent.password
-      bcrypt.compare(password,hash_password, function(e,result){
-          if(result== true){
-              const token = jwt.sign({userID:id},process.env.S_KEY,{expiresIn:'1h'})
-              res.send({Login:"login SUcess","Token":token})
-          }
-      })
-           
+    const id = isPresent._id
+    const hash_password = isPresent.password
+    bcrypt.compare(password,hash_password, function(e,result){
+        if(result== true){
+            const token = jwt.sign({userID:id},process.env.S_KEY,{expiresIn:'1h'})
+            res.send({Login:"login SUcess","Token":token})
+        }
+    })
+         
 
-    
+  
 
-  }else{
-      res.send({"Err":"Login Failed !"})
+}else{
+    res.send({"Err":"Login Failed !"})
 
-  }
+}
+
+}catch(e){
+  
+}
   
 })
 
