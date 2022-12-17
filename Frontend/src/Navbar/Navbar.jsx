@@ -403,3 +403,4 @@ export const Navbar = () => {
     </div>
   );
 };
+// solving conflict

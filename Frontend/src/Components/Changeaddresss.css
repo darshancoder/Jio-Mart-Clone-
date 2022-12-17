@@ -1,0 +1,17 @@
+
+
+#saveas{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
+#addresssave{
+    background-color: blue;
+    padding: 10px 30px 10px 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}

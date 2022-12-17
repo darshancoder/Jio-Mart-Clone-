@@ -2,6 +2,11 @@ const express = require("express")
 const cors = require("cors");
 require("dotenv").config()
 const {connect } = require("./Config/db")
+const {athuenticate} = require("./Middlewares/authentication")
+const {adminAccessRouter} = require("./Routers/adminAccess.Route")
+const {userRouter} = require("./Routers/user.routes")
+const {adminRouter} = require("./Routers/admin.routes")
+const {userNumRouter} = require("./Routers/userNum.routes")
 const { Beauty } = require("./Routers/Beauty.route")
 const { Dairy } = require("./Routers/Dairy.route")
 const { Electronics } = require("./Routers/Electronics.route")
@@ -23,6 +28,16 @@ app.use(cors({
 app.get("/",(req,res) => {
     res.send("Welcome Home to Frontend")
 })
+
+// user Signup/login
+app.use("/users",userRouter)
+//OTP Verification
+app.use("/otp",userNumRouter)
+//Admin Login
+app.use("/admin",adminRouter)
+//admin CRUD
+app.use("/admincrud",adminAccessRouter)
+
 
 app.use("/fruits", Fruits)
 app.use("/dairy", Dairy)
