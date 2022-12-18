@@ -6,7 +6,7 @@ const Fruits = express.Router();
 
 Fruits.get("/", async (req, res) => {
   try {
-    const product = await ProductModel.find();
+    const product = await ProductModel.find().sort({"price":"asc"});
     res.send(product);
   } catch (err) {
     console.log(err);

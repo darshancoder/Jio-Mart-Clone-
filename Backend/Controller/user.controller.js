@@ -28,7 +28,7 @@ module.exports.signUpNum = async(req,res) => {
     const salt = await bcrypt.genSalt(10)
     otp.otp = await bcrypt.hash(otp.otp,salt)
     const result = await otp.save()
-    return res.status(200).send("otp Send Successfullly")
+    return res.status(200).send({"otp":OTP})
 
 }
 
@@ -36,7 +36,7 @@ module.exports.verifyOtp = async(req,res) => {
     const otpHolder = await OtpModel.find({
         number:req.body.number
     })
-    if(otpHolder.length === 0) return res.status(400).send("You use an Expired OTP!")
+    if(otpHolder.length === 0) return res.status(400).send({"msg":"You use an Expired OTP!"})
     const rightOtpFind = otpHolder[otpHolder.length -1]
     const validUser = await bcrypt.compare(req.body.otp, rightOtpFind.otp)
 
