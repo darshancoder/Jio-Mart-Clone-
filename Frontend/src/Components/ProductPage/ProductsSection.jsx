@@ -86,7 +86,7 @@ useEffect(() => {
         <Box backgroundColor={"white"} mt="20px"  p={["30px 20px"]}>
             <Text textAlign={"start"} mt="-5" color={"gray"} fontWeight="600">All Products</Text>
             {/* <ShowMore  maxHeight={860}> */}
-                <SimpleGrid  columns={[1,2,3,4]} spacing={10}> 
+                <SimpleGrid  columns={[2,2,3,4]} spacing={10}> 
                 {
                     product &&
                     product?.map((product)=>{
