@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const { UserModel } = require("../Models/user.model");
 const userRouter = express.Router();
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
 
 userRouter.get("/", async (req, res) => {
   const allUsers = await UserModel.find();

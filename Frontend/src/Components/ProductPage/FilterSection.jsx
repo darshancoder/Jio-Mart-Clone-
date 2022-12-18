@@ -11,7 +11,7 @@ const FilterSection = (props) => {
     
   return (
     <>
-      <Box ml="15px" textAlign={"left"} w={["40%","30%","30%","15%"]} p="10px">
+      <Box ml="15px" textAlign={"left"} w={["50%","30%","30%","40%"]} p="10px">
       <Flex  backgroundColor={"white"} p="10px" borderRadius={"8px"}  border="1px solid grey" mt="10px" flexDirection={"column"} >
         <Text as="b" fontSize="15px">CATEGORIES</Text>
        <Link to="/fruits" style={{color:"#008ECC", textDecoration:"none"}}>Fruits & Vegetables</Link>
