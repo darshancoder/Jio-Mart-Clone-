@@ -1,17 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import Allroutes from './Components/Allroutes';
+import { Navbar } from './Navbar/Navbar';
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <h1>welcome</h1>
-       */}
-       <Allroutes/>
-    </div>
 
-    
-  );
-}
+        <div className="App">
+          <Navbar/>
+          <Allroutes />
+        </div>
+    )
+  }
 
 export default App;

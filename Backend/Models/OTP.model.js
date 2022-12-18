@@ -8,7 +8,7 @@ const otpSchema = mongoose.Schema({
     versionKey:false
 })
 
-const OtpModel = mongoose.model("oto",otpSchema)
+const OtpModel = mongoose.model("otp",otpSchema)
 
 module.exports = {OtpModel}
 
