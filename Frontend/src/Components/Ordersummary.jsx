@@ -16,6 +16,7 @@ import { Change } from './Changeaddress';
 import {
    Radio
   } from '@chakra-ui/react'
+import { useEffect } from 'react';
 function Ordersummary(props) {
     let localdata=JSON.parse(localStorage.getItem("alldata")) || []
     let [count,setcount]=useState(1)
@@ -58,6 +59,10 @@ function Ordersummary(props) {
     let handlemakepayment=()=>{
         navigate("/payment")
     }
+
+    useEffect(()=>{
+        console.log("mianpagerender")
+    },[address])
     return (
         <>
            <h3 id='deliveryadd'>Select Delivery Address</h3>
@@ -73,7 +78,7 @@ function Ordersummary(props) {
                     <div>
                       <h4 className='houseno'>{address[address.length-1].name},</h4>
                       <p className='houseno'>{address[address.length-1].houseno},</p>
-                      <p className='houseno'>{address[address.length-1].floorno},</p>
+                      {/* <p className='houseno'>{address[address.length-1].floorno},</p> */}
                       <p className='houseno'>{address[address.length-1].apartmentno},</p>
                       <p className='houseno'>{address[address.length-1].landmark},</p>
                       <p className='houseno'>{address[address.length-1].city},</p>
@@ -91,7 +96,7 @@ function Ordersummary(props) {
                 }
                 <div id='cartpageleftmainright'>
                     <div></div>
-                    <div></div>
+                   
                     <div></div>
                     <div>
                     <Change/>
@@ -130,7 +135,7 @@ function Ordersummary(props) {
                             <h4>Product Discount</h4>
                             </div>
                             <div>
-                           <h4> ₹ {mrp-price}/-</h4>
+                           <h4> ₹ {mrp-price-150}/-</h4>
                             </div>
                         </div>
                         {
@@ -167,8 +172,8 @@ function Ordersummary(props) {
                             <div>
                            {
                             viewall || inputdis?
-                            <h4>₹{main}/-</h4>:
-                            <h4> ₹{price}/-</h4>
+                            <h4>₹{main-150}/-</h4>:
+                            <h4> ₹{price-150}/-</h4>
                            }
                             </div>
                         </div>

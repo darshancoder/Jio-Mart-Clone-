@@ -8,6 +8,7 @@ import { Viewall } from './Applycoupon';
 import {CiPercent} from "react-icons/ci"
 import {AiFillPlusCircle,AiFillMinusCircle} from "react-icons/ai"
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 function Cartpage(props) {
     let localdata=JSON.parse(localStorage.getItem("alldata")) || []
     let [count,setcount]=useState(1)
@@ -40,6 +41,10 @@ function Cartpage(props) {
         }
         // alert("Invalid Coupon Code Please Enter Correct Coupon")
       
+    }
+    let navigate=useNavigate()
+    let onplace=()=>{
+        navigate("/ordersummary")
     }
     return (
         <>
@@ -206,7 +211,7 @@ function Cartpage(props) {
                         
                        
                     </div>
-                    <button id='placeorder' >Place order</button>
+                    <button id='placeorder' onClick={onplace} >Place order</button>
                 </div>
             </div>
             

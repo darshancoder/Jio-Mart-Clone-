@@ -15,3 +15,12 @@
     color: white;
     font-size: 18px;
 }
+
+#addresssave:disabled{
+    background-color: rgb(176, 176, 245);
+    color: white;
+}
+
+#addresssave:disabled:hover{
+    cursor: not-allowed;
+}
