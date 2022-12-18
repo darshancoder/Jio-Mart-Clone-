@@ -18,8 +18,7 @@ men.get("/", async (req, res) => {
 men.get("/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const men = await men;
-    Model.findById(id);
+    const men = await menModel.findById(id);
     res.send(men);
   } catch (err) {
     console.log(err);

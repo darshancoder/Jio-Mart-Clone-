@@ -14,15 +14,15 @@ const FilterSection = (props) => {
       <Box ml="15px" textAlign={"left"} w={["40%","30%","30%","15%"]} p="10px">
       <Flex  backgroundColor={"white"} p="10px" borderRadius={"8px"}  border="1px solid grey" mt="10px" flexDirection={"column"} >
         <Text as="b" fontSize="15px">CATEGORIES</Text>
-       <Link to="/fruits"> <Checkbox  mt="10px"  fontSize="15px">Fruits & Vegetables</Checkbox></Link>
-        <Checkbox fontSize="15px">Dairy & Bakery</Checkbox>
-        <Checkbox fontSize="15px">Staples</Checkbox>
-        <Checkbox fontSize="15px">Bsthroom & Laundry Accessories</Checkbox>
-        <Checkbox fontSize="15px">Men</Checkbox>
-        <Checkbox fontSize="15px">Mobiles & Tablets</Checkbox>
-        <Checkbox fontSize="15px">Make-Up</Checkbox>
-        <Checkbox fontSize="15px">Auto Care</Checkbox>
-        <Checkbox fontSize="15px">Toys</Checkbox>
+       <Link to="/fruits" style={{color:"#008ECC", textDecoration:"none"}}>Fruits & Vegetables</Link>
+       <Link to="/dairy" style={{color:"#008ECC", textDecoration:"none"}}>Dairy & Bakery</Link>
+       <Link to="/staples" style={{color:"#008ECC", textDecoration:"none"}}>Staples</Link>
+       <Link to="/HomeAppliance" style={{color:"#008ECC", textDecoration:"none"}}>HomeAppliance</Link>
+       <Link to="/men" style={{color:"#008ECC", textDecoration:"none"}}>Fasion</Link>
+       <Link to="/mobiles" style={{color:"#008ECC", textDecoration:"none"}}>Mobiles & Tablets</Link>
+       <Link to="/makeup" style={{color:"#008ECC", textDecoration:"none"}}>Make-Up</Link>
+       <Link to="/autocare" style={{color:"#008ECC", textDecoration:"none"}}>Auto Care</Link>
+       <Link to="/toysgames" style={{color:"#008ECC", textDecoration:"none"}}>Toys</Link>
       </Flex>
     
       <Flex backgroundColor={"white"} p="10px" borderRadius={"8px"} border="1px solid grey" mt="10px" flexDirection={"column"} borderTop="1px solid grey">
