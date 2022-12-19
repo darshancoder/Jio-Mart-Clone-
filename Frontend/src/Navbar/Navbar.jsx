@@ -45,6 +45,7 @@ const {userData,isAuth}=state;
 const {Fname, Lname,email}=userData;
 
 console.log(state);
+console.log(isAuth)
 
   const queryhandler = useCallback((el) => {
     setQuery(el);
@@ -106,7 +107,7 @@ console.log(state);
                 <div className={Style.buttnslider}>
                   <Button>
                     {" "}
-                    <Link to={"/user/account"}>Account</Link>
+                    <Link to={"/user/account"}><p style={{"color":"white"}}>Account</p></Link>
                   </Button>
                   <Button>Orders</Button>
                 </div>
@@ -193,21 +194,19 @@ console.log(state);
 
         <div className={Style.userdiv}>
           <FaUser className={Style.usericons} />
-          <h4>
-            {" "}
-            <Link to={"/user/login"}>Sign In</Link>
+          {isAuth?<h4 style={{"color":"white"}}>{Fname.toUpperCase()}</h4>:<><h4>
+            <Link   to={"/user/login"}><p style={{"color":"white"}}>Sign In</p></Link>
           </h4>
           <h4>
-            {" "}
-            <Link to={"/user/signup"}>Sign Up</Link>
-          </h4>
+            <Link to={"/user/signup"}><p  style={{"color":"white"}}>Sign Up</p></Link>
+          </h4></>}
         </div>
 
         <div className={Style.cartNav}>
           <BsFillCartFill className={Style.carticon} />
           <h4>
             {/* <Link to={"/cartpage"}>Cart</Link> */}
-            <p onClick={Click}>Cart</p>
+            <p onClick={Click} style={{"color":"white","cursor":"pointer"} }>Cart</p>
             
           </h4>
         </div>

@@ -30,6 +30,13 @@ const Login = () => {
     console.log(location);
     const login= () => {
         if (email.length ==0 || password.length==0) {
+            toast({
+                title: 'Please enter Email ID and Password',
+                status: 'error',
+                duration: 9000,
+                position: "top",
+                isClosable: true,
+            })
         } else {
             dispatch(UserLoginRequest())
             axios.post("http://localhost:8080/users/login", { email,password })
@@ -100,7 +107,7 @@ const Login = () => {
                             <InputGroup mt={"40px"} size='xs' w='90%'>
                                 <Input focusBorderColor='white'  type='password' value={password}
                                     onChange={(e) => setPassword(e.target.value)} placeholder='Enter Password'
-                                    _placeholder={{ opacity: 0.6, fontSize: "12px" }} marginRight={"10%"} required
+                                    _placeholder={{ opacity: 0.6, fontSize: "12px" }} marginRight={"10%"} 
                                     />
                             </InputGroup>
 

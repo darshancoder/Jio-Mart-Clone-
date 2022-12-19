@@ -39,7 +39,7 @@ const Account = () => {
         return state
     })
     // console.log(state)
-    const {userData}=state;
+    const {userData,isAuth}=state;
     const {Fname, Lname,email}=userData;
 
     const Logout=()=>{
@@ -156,9 +156,9 @@ const Account = () => {
                         <Stack direction={['row']} justifyContent={['space-between']} >
                             <Stack direction={['row']} gap="20px" >
                                 <Circle size={['40px', '60px']} bg='white' color='#008ecc'>
-                                    <Box as='span' fontWeight='bold' fontSize='lg'>
+                                    {isAuth?<Box as='span' fontWeight='bold' fontSize='lg'>
                                         {Fname[0]+""+Lname[0]}
-                                    </Box>
+                                    </Box>:null}
                                 </Circle>
                                 <Box >
                                     <Heading mt={"0px"} mb={"0px"} size='sm' color={"white"}> {Fname+" "+Lname} </Heading>
