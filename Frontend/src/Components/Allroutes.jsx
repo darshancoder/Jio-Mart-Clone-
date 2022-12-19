@@ -8,6 +8,8 @@ import { Payment } from './Payment';
 import { Paymentsuccess } from './Paymentsuccess';
 import Products from './ProductPage/Products';
 import { Success } from './Success';
+import Products from './ProductPage/Products';
+import ProductDetails from './ProductPage/ProductDetails';
 
 function Allroutes(props) {
     return (
@@ -29,8 +31,11 @@ function Allroutes(props) {
             <Route path='/paymentsuccess' element={<Paymentsuccess/>}/>
             <Route path='/success' element={<Success/>}/>
             <Route path='/otp' element={<Otp/>}/>
+            
+            <Route path="/:path/productdetails/:_id" element={<ProductDetails />}/>
         </Routes>
     );
 }
 
 export default Allroutes;
+

@@ -5,8 +5,9 @@ const { ElectronicsModel } = require("../Models/Electronics.model");
 const Electronics = express.Router();
 
 Electronics.get("/", async (req, res) => {
+  const {orderBy} = req.query
   try {
-    const product = await ElectronicsModel.find();
+    const product =  orderBy?.length == 0 ? await ElectronicsModel.find() : await ElectronicsModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);

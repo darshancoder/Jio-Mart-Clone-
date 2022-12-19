@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const { AdminModel } = require("../Models/admin.model");
 const adminRouter = express.Router();
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
 
 adminRouter.get("/", async (req, res) => {
   const adminData = await UserModel.find();
