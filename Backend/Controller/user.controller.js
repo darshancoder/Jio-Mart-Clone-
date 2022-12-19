@@ -1,7 +1,7 @@
-// const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt")
 const _ =  require("lodash")
 // const axios = require("axios")
-// const otpGenerator = require('otp-generator')
+const otpGenerator = require('otp-generator')
 
 
 const {UserNumModel}= require("../Models/user2.model")
