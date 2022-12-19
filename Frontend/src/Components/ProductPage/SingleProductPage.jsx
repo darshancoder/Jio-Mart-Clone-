@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-export default function SingleProductPage({ID,Image,Title,Price,path, product}) {
+export default function SingleProductPage({ID,Image,Title,Price,path}) {
   // console.log(product,'uday')
   // console.log("sdusnduj");
   return (

@@ -7,7 +7,7 @@ const Beauty = express.Router();
 Beauty.get("/", async (req, res) => {
   const {orderBy} = req.query
   try {
-    const product =  orderBy.length == 0 ? await BeautyModel.find() : await BeautyModel.find().sort({'price': orderBy });
+    const product =  orderBy?.length == 0 ? await BeautyModel.find() : await BeautyModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);
