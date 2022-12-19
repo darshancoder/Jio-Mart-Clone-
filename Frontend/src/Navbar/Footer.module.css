@@ -1,0 +1,99 @@
+.footermaindiv{
+    width:100%;
+    height:420px;
+    /* border:2px solid black; */
+    display: block;
+    background-color: #151B3914;
+}
+   /* last foot div */
+
+.lastdivfooter{
+    border:1px solid silver;
+    height:45px;
+    display: flex;
+    justify-content: center;
+    gap:150px;
+    align-items: center;
+}
+.lastdivfooter>div{
+    font-size: 12px;
+}
+
+
+
+
+.secondfooter{
+    height:375px;
+    /* border:2px solid yellow; */
+    display: flex;
+    width:75%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+   
+}
+.secondfooter>div{
+    /* border:1px solid green; */
+    width:400px;
+    height:300px;
+
+}
+.divone>ul>li>h2{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+}
+ul>li{
+    list-style: none;
+    font-size: 12px;
+    color:gray;
+}
+
+.contactfooterdiv>h2{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    margin-bottom: 5px;
+}
+
+.contactfooterdiv>div{
+    font-size: 12px;
+    color:gray;
+}
+
+
+
+@media screen and (max-width: 640px){
+.footermaindiv{
+    margin-top: 180px;
+}
+
+.secondfooter{
+    width:85%;
+   
+}
+.divone>ul>li>h2{
+    font-size: 10px;
+}
+.contactfooterdiv>div{
+    font-size: 10px;
+   
+}
+
+.contactfooterdiv>h2{
+    font-size: 10px;
+
+}
+  /* last foot div */
+
+  .lastdivfooter{
+    height:45px;
+    gap:95px;
+    align-items: center;
+}
+.lastdivfooter>div{
+    font-size: 8px;
+}
+}

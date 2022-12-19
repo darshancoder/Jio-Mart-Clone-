@@ -1,5 +1,6 @@
 import { Fade, ScaleFade, Slide, SlideFade,Button,useDisclosure,Collapse,Box, Radio } from '@chakra-ui/react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 function Upi() {
     const { isOpen, onToggle } = useDisclosure()
     
@@ -8,7 +9,17 @@ function Upi() {
         setphonepay(e.target.value)
         
      }
-     console.log(phonepay)
+    if(!phonepay){
+      console.log("thejea")
+    }
+    else{
+      console.log(phonepay)
+    }
+    let navigate=useNavigate()
+
+    let handlepayment=()=>{
+      navigate("/paymentsuccess")
+    }
     return (
       <>
         <Button textAlign="left" width="100%" bg="blue" border="none" cursor="pointer" color="white" _hover="none"  onClick={onToggle}>UPI</Button>
@@ -78,8 +89,8 @@ function Upi() {
         <div></div>
       </div>
       <hr />
-
-      <button id='payamount' disabled={!phonepay}>Pay Amount</button>
+        {/* <button id='id'  disabled={!phonepay}>submit</button> */}
+      <button id='payamount' disabled={!phonepay } onClick={handlepayment}>Pay Amount</button>
         </Collapse>
       </>
     )

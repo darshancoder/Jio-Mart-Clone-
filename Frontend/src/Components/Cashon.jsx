@@ -1,21 +1,23 @@
 import { Fade, ScaleFade, Slide, SlideFade,Button,useDisclosure,Collapse,Box, Radio } from '@chakra-ui/react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 function Cashon() {
     const { isOpen, onToggle } = useDisclosure()
-    let init={
-        phone:"",
-        google:"",
-        otherupi:"",
-        jio:""
-    }
-     let [phonepay,setphonepay]=useState(init)
+   
+     let [phonepay,setphonepay]=useState("")
      let handlechange=(e)=>{
         setphonepay(
-            ...phonepay,
+            
             e.target.value
     )
     console.log(phonepay)
      }
+
+     let navigate=useNavigate()
+
+    let handlepayment=()=>{
+      navigate("/success")
+    }
     return (
       <>
         <Button textAlign="left" width="100%" bg="blue" border="none" cursor="pointer" color="white" _hover="none"  onClick={onToggle}>Cash On Delivery</Button>
@@ -42,7 +44,7 @@ function Cashon() {
       <hr />
      
 
-      <button id='payamount'>Pay Amount</button>
+      <button id='payamount' disabled={!phonepay} onClick={handlepayment}>Pay Amount</button>
         </Collapse>
       </>
     )

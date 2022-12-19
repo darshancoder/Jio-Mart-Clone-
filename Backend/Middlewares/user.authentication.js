@@ -1,7 +1,7 @@
 require('dotenv').config()
 const jwt = require("jsonwebtoken")
 
-const Userathuenticate = (req,res,next) =>{
+const athuenticate = (req,res,next) =>{
     var token = req.headers?.authorization?.split(" ")[1]
     if(token){
         jwt.verify(token, process.env.S_KEY, function(e,decoded){
@@ -17,4 +17,4 @@ const Userathuenticate = (req,res,next) =>{
     }
 }
 
-module.exports = {Userathuenticate}
+module.exports = {athuenticate}

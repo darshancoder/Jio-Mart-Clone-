@@ -5,8 +5,9 @@ const { AutoCareModel } = require("../Models/AutoCare.model");
 const AutoCare = express.Router();
 
 AutoCare.get("/", async (req, res) => {
+  const {orderBy} = req.query
   try {
-    const product = await AutoCareModel.find();
+    const product =  orderBy?.length == 0 ? await AutoCareModel.find() : await AutoCareModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);
