@@ -66,8 +66,9 @@
                           /* navbar-2 */
 #newnav{
     width:100%;
-    height:40px;
-    background-color: #f2e8e8;
+    height:auto;
+    background-color: #f1efef;
+/* border: 2px solid red; */
      display: flex;
      align-items: center;
    justify-content: center;
@@ -84,6 +85,7 @@
 .navbar2style1 {
    display: flex;
    align-items: center;
+   border: none;
    gap:1px;
 
 }
@@ -94,8 +96,8 @@
 .navbar2style1>p{
     color:black;
     font-weight: 600;
-    font-size: 14px;
-    margin-top: 2px;
+    font-size: 15px;
+    /* margin-top: 2px; */
 }
 
 .dropdown{
