@@ -45,7 +45,7 @@ const Signup = () => {
         if (number.length < 10) {
             setFlag(true)
         } else {
-            axios.post("http://localhost:8080/otp/number", { number })
+            axios.post("https://mysterious-moth-gaiters.cyclic.app/otp/number", { number })
                 .then((res) => {
                     console.log(res)
                     setToggle("true")
@@ -125,7 +125,7 @@ const Signup = () => {
             })
         }
         else{
-            axios.post("http://localhost:8080/users/signup", { Fname,Lname,email,password})
+            axios.post("https://mysterious-moth-gaiters.cyclic.app/users/signup", { Fname,Lname,email,password})
         .then((res) => {
             console.log(res)
             setToggle("true")

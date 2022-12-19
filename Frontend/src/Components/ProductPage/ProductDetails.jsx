@@ -21,7 +21,7 @@ export default function ProductDetails() {
     useEffect(() => {
         
 
-        axios.get(`http://localhost:8080/${arr[1]}/${_id}`)
+        axios.get(`https://mysterious-moth-gaiters.cyclic.app/${arr[1]}/${_id}`)
         .then((res)=>{
             setProduct(res.data)
             console.log(res.data)
@@ -41,7 +41,7 @@ export default function ProductDetails() {
 
 
     const handleClick= ()=>{
-        axios.get(`http://localhost:8080/${arr[1]}/${_id}`)
+        axios.get(`https://mysterious-moth-gaiters.cyclic.app/${arr[1]}/${_id}`)
         .then((res)=>{
             setProduct(res.data)
             // console.log(res.data)

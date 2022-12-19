@@ -32,7 +32,7 @@ const Login = () => {
         if (email.length ==0 || password.length==0) {
         } else {
             dispatch(UserLoginRequest())
-            axios.post("http://localhost:8080/users/login", { email,password })
+            axios.post("https://mysterious-moth-gaiters.cyclic.app/users/login", { email,password })
                 .then((res) => {
                     console.log(res)
                     setToggle("true")
