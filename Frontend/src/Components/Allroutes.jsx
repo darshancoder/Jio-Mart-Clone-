@@ -4,10 +4,12 @@ import Cartpage from './Cartpage';
 import Data from './local';
 import Products from './ProductPage/Products';
 import ProductDetails from './ProductPage/ProductDetails';
+import HomePage from './HomePage/HomePage';
 
 function Allroutes(props) {
     return (
         <Routes>
+            <Route path='/' element={<HomePage url={`fruits`}/>}/>
             <Route path='/cartpage' element={<Cartpage/>}/>
             <Route path='/local' element={<Data/>}/>
             <Route path='/fruits' element={<Products url={`fruits`}/>} />
