@@ -41,40 +41,9 @@ export const userLogin=(data)=>(dispatch)=>{
 }
 
 
-export const UserSignUpRequest=()=>{
-  return{
-    type:type.SIGNUP_REQUEST
-  }
-   
-}
-export const UserSignUpSuccess=(payload)=>{
-  return{
-    type:type.SIGNUP_SUCCESS,
-    payload
-  }
-   
-}
-export const UserSignUpFailure=()=>{
-  return{
-    type:type.SIGNUP_FAILURE
-  }
-   
-}
 
-export const userSignUp=(data)=>(dispatch)=>{
-  dispatch(UserSignUpRequest());
-return axios.post("https://mock-api-server.onrender.com/users",data)
-  .then((res)=>{
-      return dispatch(UserSignUpSuccess(res.data))
-  }).catch((res)=>dispatch(UserSignUpFailure()))
 
-}
 
-const UserLogoutRequest=()=>{
-  return{
-    type:type.LOGOUT_REQUEST
-  }
-}
 
 const UserLogoutSuccess=()=>{
   return{

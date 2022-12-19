@@ -3,27 +3,48 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/layout'
-import { Img } from '@chakra-ui/image'
+// import { Img } from '@chakra-ui/image'
 import { Button } from '@chakra-ui/button'
 // import SortSection from './SortSection'
 import { css } from '@emotion/react'
+import SingleProductPage from './SingleProductPage'
+import { useLocation } from 'react-router-dom'
 // import styles from "./Products.module.css"
 
+
+// function getUrl(api, sort, orderBy) {
+//   if (sort && orderBy) {
+//     api = `${api}?_sort=${sort}&_order=${orderBy}`;
+//   } 
+
+//   return api;
+// }
+
 export default function ProductsSection(props) {
-    const [product, setProduct] = useState("")
-    const {url} =props
-    useEffect(() => {
-    axios.get(`http://localhost:8080/${url}`)
-      .then((res)=>{
-        setProduct(res.data)
-        console.log(res.data)
-      })
-      .catch((err)=>{
-        console.log(err);
-      })
-      
-    })
+    // const history = useHistory()
+    const location = useLocation()
+    // const [ searchParams, setSearchParams] = useSearchParams();
+    // console.log(location.pathname);
     
+    const [product, setProduct] = useState("")
+    const [orderBy, setOrderBy] = useState("");
+    // const sort = "price";
+    const {url} =props;
+
+useEffect(() => {
+      // let apiUrl = getUrl(
+      //   `http://localhost:8080/${url}`,
+      //   sort,
+      //   orderBy,
+      // );
+  
+      axios.get(`http://localhost:8080/${url}?orderBy=${orderBy}`)
+        .then((res) => {
+          setProduct(res.data)
+          // console.log(res.data)
+        });
+    }, [orderBy,url]);
+
   return (
     <Box>
        <Box>
@@ -36,13 +57,13 @@ export default function ProductsSection(props) {
         h="25px" mt={"13px"}
       >Popularity
       </Button>
-      <Button 
+      <Button onClick={()=> setOrderBy("desc")}
         size={"sm"} h="25px" mt={"13px"} fontWeight="500"
         css={css`&:hover {backgroundcolor: white;}`} cursor={"pointer"}
         border="white" backgroundColor="white" 
       >High to Low
       </Button>
-      <Button 
+      <Button onClick={()=> setOrderBy("asc")}
         size={"sm"} h="25px" mt={"13px"} fontWeight="500"
         css={css`&:hover {backgroundcolor: white;}`}
         border="white" backgroundColor="white" cursor={"pointer"}
@@ -54,7 +75,7 @@ export default function ProductsSection(props) {
         border="white" backgroundColor="white" 
       >Discount
       </Button>
-      <Button 
+      <Button onClick={()=> setOrderBy("")}
         cursor={"pointer"} size={"sm"} h="25px" mt={"13px"} fontWeight="500"
         css={css`&:hover {backgroundcolor: white;}`}
         border="white" backgroundColor="white" 
@@ -70,27 +91,23 @@ export default function ProductsSection(props) {
                     product &&
                     product?.map((product)=>{
                         return(
-                            
-                                <Box backgroundColor={"white"} h={["auto"]} p={"10px"} w={["300px","220px","150px","250px" ]} borderRadius="8px" 
-                                     mt='3px' border={"1px solid grey"} key={product._id}>
-                                    <Img 
-                                     css={css`&:hover {transition: .15s ease;
-                                        -webkit-transform: scale(1);
-                                        -ms-transform: scale(1);
-                                        transform: scale(1.15);}`}
-                                     cursor={"pointer"} borderRadius="8px" width={["190px","178px","140px","178px"]} mt={"10px"} src={product.image} alt="product"
-                                    />
-                                    <Box textAlign={"start"}>
-                                    <Text mt="30px" fontWeight={"650"}>{product.title}</Text>
-                                    <Text>M.R.P. {product.price}</Text> 
-                                    {/* <Button css={css`&:hover {bacground-color:none;}`} cursor={"pointer"} color={"white"} backgroundColor={"#008ECC"} w={"100%"}>Add TO Cart</Button> */}
-                                    <Button cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w={"100%"} color={"white"} colorScheme='twitter'>Add TO Cart</Button>
-                                    </Box>
+                                <Box key={product._id}>
+                                  <SingleProductPage key={product._id} path = {location.pathname}
+                                    ID={product._id}
+                                    Image={product.image}
+                                  //  <Box textAlign={"start"}>
+                                    Title={product.title}
+                                    Price={product.price} 
+                                   // <Button css={css`&:hover {bacground-color:none;}`} cursor={"pointer"} color={"white"} backgroundColor={"#008ECC"} w={"100%"}>Add TO Cart</Button> 
+                                    // Button={<Button cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w={"100%"} color={"white"} colorScheme='twitter'>Add TO Cart</Button>}
+                                    // </Box> 
+                                  />
                                 </Box>
                         )
                     })
                 }
                 </SimpleGrid> 
+              
             {/* </ShowMore> */}
         </Box>
 

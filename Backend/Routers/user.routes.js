@@ -15,7 +15,9 @@ userRouter.post("/signup", async (req, res) => {
   const { Fname,Lname, email, password } = req.body;
   const UserPresent = await UserModel.findOne({ email });
   if (UserPresent?.email) {
-    res.send({ User: "User already exists!" });
+    res.send({ "msg": "User already exists!" ,
+               "isRegisterd":true
+  });
   } else {
     try {
       bcrypt.hash(password, 8, async (e, hash) => {
@@ -37,13 +39,16 @@ userRouter.post("/signup", async (req, res) => {
 userRouter.post("/login", async(req,res) => {
   const {email,password} = req.body
   const isPresent = await UserModel.findOne({email})
+   console.log(isPresent)
   if(isPresent){
       const id = isPresent._id
       const hash_password = isPresent.password
       bcrypt.compare(password,hash_password, function(e,result){
           if(result== true){
               const token = jwt.sign({userID:id},process.env.S_KEY,{expiresIn:'1h'})
-              res.send({Login:"login SUcess","Token":token})
+              res.send({Login:"login Success",token:token,isUser:true,data:isPresent})
+          }else{
+            res.send({Login:"login failed"})
           }
       })
            
@@ -51,7 +56,7 @@ userRouter.post("/login", async(req,res) => {
     
 
   }else{
-      res.send({"Err":"Login Failed !"})
+      res.send({msg:"Login Failed !",isUser:false})
 
   }
   

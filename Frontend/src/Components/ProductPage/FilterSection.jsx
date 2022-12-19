@@ -1,5 +1,6 @@
 import { Box, Checkbox, Flex, Input, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import {useSearchParams, useParams, useLocation} from 'react-router-dom'
 
 const FilterSection = (props) => {
@@ -13,7 +14,7 @@ const FilterSection = (props) => {
       <Box ml="15px" textAlign={"left"} w={["40%","30%","30%","15%"]} p="10px">
       <Flex  backgroundColor={"white"} p="10px" borderRadius={"8px"}  border="1px solid grey" mt="10px" flexDirection={"column"} >
         <Text as="b" fontSize="15px">CATEGORIES</Text>
-        <Checkbox  mt="10px"  fontSize="15px">Fruits & Vegetables</Checkbox>
+       <Link to="/fruits"> <Checkbox  mt="10px"  fontSize="15px">Fruits & Vegetables</Checkbox></Link>
         <Checkbox fontSize="15px">Dairy & Bakery</Checkbox>
         <Checkbox fontSize="15px">Staples</Checkbox>
         <Checkbox fontSize="15px">Bsthroom & Laundry Accessories</Checkbox>

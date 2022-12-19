@@ -23,22 +23,25 @@ import {
 import React, { useState } from 'react'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { MdNoteAlt } from 'react-icons/md';
-
+import { useDispatch } from 'react-redux';
+import {UserLogout} from "../AuthReducer/action"
+import { useNavigate } from 'react-router-dom';
 const Account = () => {
     const [input, setInput] = useState('')
-  
     const [isMobile] = useMediaQuery('(max-width: 768px)')
-
-
     const { isOpen, onOpen, onClose } = useDisclosure()
-
     const [iSPro, setISPro] = useState(false)
     const [iSAdd, setISAdd] = useState(false)
     const handleInputChange = (e) => setInput(e.target.value)
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
+    const Logout=()=>{
+        dispatch(UserLogout())
+        navigate("/user/login")
 
-    const c = () => {
-        return onClose()
+
     }
+
     const updateProfile=()=>{
         setISAdd(false)
         setISPro(true)
@@ -91,7 +94,7 @@ const Account = () => {
                         </ModalBody>
 
                         <ModalFooter>
-                        <Button size={"sm"} type="button" w="100%" colorScheme='blue' variant='solid' mr={3} onClick={c}>
+                        <Button size={"sm"} type="button" w="100%" colorScheme='blue' variant='solid' mr={3} >
                                 Save Changes
                             </Button>
 
@@ -130,7 +133,7 @@ const Account = () => {
                 </ModalBody>
 
                 <ModalFooter>
-                <Button size={"sm"} type="button" w="100%" colorScheme='blue' variant='solid' mr={3} onClick1={c}>
+                <Button size={"sm"} type="button" w="100%" colorScheme='blue' variant='solid' mr={3} >
                         Save Changes
                     </Button>
 
@@ -139,7 +142,7 @@ const Account = () => {
         </Modal>
     </Box>}
 
-            <Box pl={["0%", "5%", "5%"]} pr={["12%", "10%", "5%"]} bg={"whiteAlpha.900"} mb="0px" height={"100vh"}  >
+            <Box mt={"150px"} pl={["0%", "5%", "5%"]} pr={["12%", "10%", "5%"]} bg={"whiteAlpha.900"} mb="0px" height={"100vh"}  >
                 <Heading as='h1' size='md' alignItems="left">My Account</Heading>
                 <Stack direction={['column', 'row', 'row']} justifyContent={['space-between']}>
                     <Stack w={["100%", "100%", "40%"]} h="fit-content" bg={"#008ecc"} p={"20px"} borderRadius="5px">
@@ -236,7 +239,7 @@ const Account = () => {
                         <Divider />
                         <Text m={0} cursor="pointer" size='sm' >Contact Us</Text>
                         <Divider />
-                        <Text m={0} cursor="pointer" size='sm' >Logout</Text>
+                        <Text m={0} cursor="pointer" size='sm' onClick={Logout} >Logout</Text>
                         <Divider />
 
                     </Stack>

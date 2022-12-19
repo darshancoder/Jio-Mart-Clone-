@@ -16,7 +16,11 @@ module.exports.signUpNum = async(req,res) => {
         number:req.body.number
     })
 
-    if(user) return res.status(400).send("User already registered!")
+    if(user) return res.status(400).send(
+        {"msg":"User already registered!",
+        "isRegisterd":true
+
+        })
 
     const OTP = otpGenerator.generate(4,{
         digits:true, lowerCaseAlphabets:false, upperCaseAlphabets:false,specialChars:false
@@ -48,12 +52,12 @@ module.exports.verifyOtp = async(req,res) => {
             number:rightOtpFind.number
         })
         return res.status(200).send({
-            message:"user Registration Successully",
+            msg:"user Registration Successully",
             token:token,
             data:result
         })
     }else{
-        return res.send("Your OTP is Wrong ")
+        return res.send({"msg":"Your OTP is Wrong "})
     }
 
 }

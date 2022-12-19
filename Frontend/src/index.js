@@ -24,9 +24,7 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
     <ChakraProvider theme={theme} resetCSS={false} >
-      
         <App />
-      
     </ChakraProvider>
     </BrowserRouter>
   </Provider>
