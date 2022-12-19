@@ -6,7 +6,7 @@ const adminRouter = express.Router();
 // const jwt = require("jsonwebtoken");
 
 adminRouter.get("/", async (req, res) => {
-  const adminData = await UserModel.find();
+  const adminData = await AdminModel.find();
   res.send(adminData);
 });
 
@@ -34,8 +34,12 @@ adminRouter.get("/", async (req, res) => {
 // });
 
 adminRouter.post("/adminlogin", async(req,res) => {
+ try{
   const {adminID,password} = req.body
   const isPresent = await AdminModel.findOne({adminID})
+  // const isPresent2 = await AdminModel.findOne({password})
+
+
   if(isPresent){
       const id = isPresent._id
       const hash_password = isPresent.password
@@ -53,7 +57,11 @@ adminRouter.post("/adminlogin", async(req,res) => {
       res.send({"Err":"Admin Login Failed !"})
 
   }
-  
+ }
+  catch(e){
+    console.log(e);
+    res.send({Error:"Something is Error getting from Admin"})
+  }
 })
 
 module.exports = { adminRouter };

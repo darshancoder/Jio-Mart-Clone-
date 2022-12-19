@@ -2,7 +2,7 @@ const express = require("express")
 const cors = require("cors");
 require("dotenv").config()
 const {connect } = require("./Config/db")
-const {athuenticate} = require("./Middlewares/authentication")
+const {Userathuenticate} = require("./Middlewares/user.authentication")
 const {adminAccessRouter} = require("./Routers/adminAccess.Route")
 const {userRouter} = require("./Routers/user.routes")
 const {adminRouter} = require("./Routers/admin.routes")
@@ -16,7 +16,8 @@ const { HomeKitchen } = require("./Routers/Home&Kitchen.route")
 const { AutoCare } = require("./Routers/HomeImprovement.route")
 const { apples_pears } = require("./Routers/PremiumFruits.route")
 const { SportsToys } = require("./Routers/SportsToys")
-const { Staples } = require("./Routers/Staples.route")
+const { Staples } = require("./Routers/Staples.route");
+const { Adminathuenticate } = require("./Middlewares/admin.authenticate");
 
 
 const app = express()
@@ -33,8 +34,11 @@ app.get("/",(req,res) => {
 app.use("/users",userRouter)
 //OTP Verification
 app.use("/otp",userNumRouter)
+//Admin Athuenticate middleware
 //Admin Login
 app.use("/admin",adminRouter)
+// app.use(Adminathuenticate)
+
 //admin CRUD
 app.use("/admincrud",adminAccessRouter)
 
