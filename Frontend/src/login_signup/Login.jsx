@@ -39,7 +39,7 @@ const Login = () => {
             })
         } else {
             dispatch(UserLoginRequest())
-            axios.post("http://localhost:8080/users/login", { email,password })
+            axios.post("https://mysterious-moth-gaiters.cyclic.app/users/login", { email,password })
                 .then((res) => {
                     console.log(res)
                     setToggle("true")

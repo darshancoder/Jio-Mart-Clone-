@@ -11,7 +11,7 @@ export default function SingleProductPage({ID,Image,Title,Price,path}) {
   const toast=useToast();
   let main=JSON.parse(localStorage.getItem("alldata")) || []
   const handleClick= ()=>{
-    axios.get(`http://localhost:8080${path}/${ID}`)
+    axios.get(`https://mysterious-moth-gaiters.cyclic.app${path}/${ID}`)
     .then((res)=>{
         
         // console.log(res.data)

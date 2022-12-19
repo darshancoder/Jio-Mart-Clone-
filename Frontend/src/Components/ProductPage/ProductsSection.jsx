@@ -38,7 +38,7 @@ useEffect(() => {
       //   orderBy,
       // );
   
-      axios.get(`http://localhost:8080/${url}?orderBy=${orderBy}`)
+      axios.get(`https://mysterious-moth-gaiters.cyclic.app/${url}?orderBy=${orderBy}`)
         .then((res) => {
           setProduct(res.data)
           // console.log(res.data)

@@ -5,7 +5,7 @@ const otpGenerator = require('otp-generator')
 
 
 const {UserNumModel}= require("../Models/user2.model")
-const {OtpModel}= require("../Models/otp.model")
+const {OtpModel}= require("../Models/OTP.model")
 
 
 
