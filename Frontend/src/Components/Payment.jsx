@@ -8,10 +8,10 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { Accordination } from './Accordination'
 export const Payment = () => {
     let localdata=JSON.parse(localStorage.getItem("alldata")) || []
-    let mrp=0
+    let mrp=100
     let price=0
     localdata.forEach((el)=>{
-        mrp+=+el.mrp
+        // mrp+=+el.mrp
         price+=+el.price
 
     })
@@ -47,7 +47,7 @@ export const Payment = () => {
         <div id='paymentpagemiddle'>
             <div>
                 <p>Amount Payable</p>
-                <h3>₹ {price-150}</h3>
+                <h3>₹ {price-25}</h3>
                 <hr />
             </div>
             <Tabs isFitted variant='enclosed'>

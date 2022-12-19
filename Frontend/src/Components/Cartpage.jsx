@@ -19,14 +19,14 @@ function Cartpage(props) {
     let handlereduce=()=>{
         setcount(count-1)
     }
-    let mrp=0
+    let mrp=100
     let price=0
     localdata.forEach((el)=>{
-        mrp+=+el.mrp
+        // mrp+=+el.mrp
         price+=+el.price
 
     })
-    let main=price-150
+    let main=price-25
     let [viewall,setviewall]=useState(false)
     let handlestate=(state)=>{
         setviewall(true)
@@ -48,7 +48,7 @@ function Cartpage(props) {
     }
     return (
         <>
-            <div id="cartpagemain">
+            <div id="cartpagemain" >
                 <div id='cartpageleft'>
                 <h3 id='fashionbasket'>Fashion Basket ({localdata.length} Items)  </h3>
                     {
@@ -56,27 +56,27 @@ function Cartpage(props) {
                             return (
                                 <div id='localid'>
                                    <div>
-                                    <img src={el.imageurl} alt="" />
+                                    <img src={el.image} alt="" />
                                    </div>
                                    <div id='localidright'>
                                     <div>
-                                        <h4 id='nameid'>{el.name}</h4>
+                                        <h4 id='nameid'>{el.title}</h4>
                                     </div>
                                     <div id='pricediv'>
                                         <div>
                                         <h4 id='priceid'>₹{el.price}</h4>
                                         </div>
                                         <div>
-                                            <p id='mrpid' > ₹{el.mrp}</p>
+                                            <p id='mrpid' > ₹{100}</p>
                                         </div>
                                         <div>
-                                            <p id='saveid'>You Save ₹{el.mrp-el.price}</p>
+                                            <p id='saveid'>You Save ₹{100-el.price}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 id='sizeid'>
+                                        {/* <h4 id='sizeid'>
                                             Size:L
-                                        </h4>
+                                        </h4> */}
                                     </div>
                                     <div id='finalbutton'>
                                         <div>
@@ -156,7 +156,7 @@ function Cartpage(props) {
                             <h4>MRP Total</h4>
                             </div>
                             <div>
-                           <h4> ₹ {mrp}/-</h4>
+                           <h4> ₹ {localdata.length*100}/-</h4>
                             </div>
                             
                         </div>
@@ -165,7 +165,7 @@ function Cartpage(props) {
                             <h4>Product Discount</h4>
                             </div>
                             <div>
-                           <h4> ₹ {mrp-price}/-</h4>
+                           <h4> ₹ {localdata.length*100-price}/-</h4>
                             </div>
                         </div>
                         {
@@ -176,7 +176,7 @@ function Cartpage(props) {
                             </div>
                            
                             <div>
-                           <h4> ₹ {150}/-</h4>
+                           <h4> ₹ {25}/-</h4>
                             </div>
                         </div>: ""
                         }
@@ -189,7 +189,7 @@ function Cartpage(props) {
                             </div>
                            
                             <div>
-                           <h4> ₹ {150}/-</h4>
+                           <h4> ₹ {25}/-</h4>
                             </div>
                         </div>: ""
                         }

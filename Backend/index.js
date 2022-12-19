@@ -17,8 +17,6 @@ const { AutoCare } = require("./Routers/HomeImprovement.route")
 const { apples_pears } = require("./Routers/PremiumFruits.route")
 const { SportsToys } = require("./Routers/SportsToys")
 const { Staples } = require("./Routers/Staples.route")
-
-
 const app = express()
 app.use(express.json())
 app.use(cors({

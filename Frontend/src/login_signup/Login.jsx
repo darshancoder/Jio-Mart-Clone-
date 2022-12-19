@@ -45,7 +45,7 @@ const Login = () => {
                             position: "top",
                             isClosable: true,
                         })
-                        navigate("/user/signup")
+                        navigate("/")
                     } else if(res.data.isUser==undefined){
                         dispatch(UserLoginFailure())
                         toast({

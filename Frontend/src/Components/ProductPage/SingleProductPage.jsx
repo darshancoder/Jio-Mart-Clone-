@@ -2,10 +2,35 @@ import { Box, Button, Img, Text  } from '@chakra-ui/react'
 import { css } from '@emotion/react'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+import { useToast } from '@chakra-ui/react'
+
 
 export default function SingleProductPage({ID,Image,Title,Price,path}) {
-  // console.log(product,'uday')
-  // console.log("sdusnduj");
+  console.log(path)
+  const toast=useToast();
+  let main=JSON.parse(localStorage.getItem("alldata")) || []
+  const handleClick= ()=>{
+    axios.get(`http://localhost:8080${path}/${ID}`)
+    .then((res)=>{
+        
+        // console.log(res.data)
+        main.push(res.data)
+        localStorage.setItem("alldata",JSON.stringify(main)) 
+        toast({
+          title: 'Item added to Cart.',
+          status: 'success',
+          duration: 9000,
+          position: "top",
+          isClosable: true,
+      })         
+
+      })
+    .catch((err)=>{
+        console.log(err);
+    })
+    
+}
   return (
     <Box  backgroundColor={"white"} h={["auto"]} p={"10px"} w={["80%","85%","90%","95%" ]} borderRadius="8px" 
     mt='3px' border={"1px solid grey"}>
@@ -20,7 +45,7 @@ export default function SingleProductPage({ID,Image,Title,Price,path}) {
         M.R.P. <Text as="b">₹ {Price}</Text>
         </Box>
         
-        <Button mt="20px" cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w={"100%"} color={"white"} colorScheme='twitter'>
+        <Button onClick={handleClick} mt="20px" cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w={"100%"} color={"white"} colorScheme='twitter'>
           Add TO Cart
         </Button>
     </Box>

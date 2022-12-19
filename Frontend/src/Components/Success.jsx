@@ -15,17 +15,17 @@ export const Success = () => {
     useEffect(()=>{
         if(count==7){
 
-            navigate("/local")
+            navigate("/")
         }
     },[count])
   return (
     <div id='successpage'>
         {
             count<=6?
-            <div>
+            <div id='successmain'>
 
                 {/* <h2>Cash On Delivery Successful</h2> */}
-                <img width="30%" src="https://agazella.com/wp-content/uploads/2021/03/payment_successful.gif"alt="" />
+                <img  src="https://agazella.com/wp-content/uploads/2021/03/payment_successful.gif"alt="" />
             </div>
             :""
         }

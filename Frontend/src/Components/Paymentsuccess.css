@@ -3,8 +3,9 @@
     /* border: 1px solid red; */
     height: 60vh;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 15%;
     background-color: white;
+    /* margin-top: 10rem; */
 }
 
 #payingto{
@@ -17,6 +18,25 @@
     line-height: 2px;
 }
 #spinner{
-    margin-top: 15%;
+   
+    width: 30%;
+    margin: auto;
+    margin-top: 20%;
 
+}
+
+#porewdvy{
+    width: 30%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+#theja{
+    width: 40%;
+    margin: auto;
+}
+
+#dlasfjldfj{
+    width: 50%;
+    margin: auto;
 }

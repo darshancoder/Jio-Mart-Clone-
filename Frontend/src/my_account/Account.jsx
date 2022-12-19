@@ -23,7 +23,7 @@ import {
 import React, { useState } from 'react'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { MdNoteAlt } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {UserLogout} from "../AuthReducer/action"
 import { useNavigate } from 'react-router-dom';
 const Account = () => {
@@ -35,6 +35,13 @@ const Account = () => {
     const handleInputChange = (e) => setInput(e.target.value)
     const dispatch=useDispatch()
     const navigate=useNavigate()
+    let state=useSelector((state)=>{
+        return state
+    })
+    // console.log(state)
+    const {userData}=state;
+    const {Fname, Lname,email}=userData;
+
     const Logout=()=>{
         dispatch(UserLogout())
         navigate("/user/login")
@@ -150,12 +157,12 @@ const Account = () => {
                             <Stack direction={['row']} gap="20px" >
                                 <Circle size={['40px', '60px']} bg='white' color='#008ecc'>
                                     <Box as='span' fontWeight='bold' fontSize='lg'>
-                                        BK
+                                        {Fname[0]+""+Lname[0]}
                                     </Box>
                                 </Circle>
                                 <Box >
-                                    <Heading mt={"0px"} mb={"0px"} size='sm' color={"white"}>Bhupendra kumar </Heading>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' color={"whiteAlpha.700"}>bkc.janta@gmail.com</Text>
+                                    <Heading mt={"0px"} mb={"0px"} size='sm' color={"white"}> {Fname+" "+Lname} </Heading>
+                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' color={"whiteAlpha.700"}>{email}</Text>
                                     <Text mt={"0px"} mb={"0px"} fontSize='xs' color={"whiteAlpha.700"}>+91 8236898936</Text>
                                 </Box>
 
@@ -187,12 +194,12 @@ const Account = () => {
                             <Box w="50%" h="100%"  >
                                 <Box>
                                     <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"normal"} color={"black.600"}>Full Name</Text>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>Bhupendra Kuamar</Text>
+                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>{Fname+" "+Lname}</Text>
                                 </Box>
 
                                 <Box mt={"5"}>
                                     <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"normal"} color={"black.600"}>Email Id</Text>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>bkc.janta@gmail.com</Text>
+                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>{email}</Text>
                                 </Box>
                             </Box>
 
@@ -205,17 +212,10 @@ const Account = () => {
                                     <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"normal"} color={"black.600"}>Mobile No.</Text>
                                     <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>+91 8236898936</Text>
                                 </Box>
+                                
+                        
                                 <Box mt={"5"}>
                                     <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"normal"} color={"black.600"}>Address</Text>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>Bhupendra kumar</Text>
-                                </Box>
-                                <Box mt={"5"}>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"normal"} color={"black.600"}>Mobile No.</Text>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>+91 8236898936</Text>
-                                </Box>
-                                <Box mt={"5"}>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"normal"} color={"black.600"}>Address</Text>
-                                    <Text mt={"0px"} mb={"0px"} fontSize='xs' fontWeight={"bold"}>Bhupendra kumar</Text>
                                 </Box>
 
 

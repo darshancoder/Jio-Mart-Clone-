@@ -97,7 +97,8 @@ useEffect(() => {
                                     Image={product.image}
                                   //  <Box textAlign={"start"}>
                                     Title={product.title}
-                                    Price={product.price} 
+                                    Price={product.price}
+                                   
                                     // product ={product}
                                    // <Button css={css`&:hover {bacground-color:none;}`} cursor={"pointer"} color={"white"} backgroundColor={"#008ECC"} w={"100%"}>Add TO Cart</Button> 
                                     // Button={<Button cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w={"100%"} color={"white"} colorScheme='twitter'>Add TO Cart</Button>}

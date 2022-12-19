@@ -6,9 +6,15 @@
     padding-left: 2rem;
     padding-right: 2rem;
     border-radius: 2rem;
+    margin-top: 12rem;
 }
 a{
     text-decoration: none;
+}
+
+#dlfj{
+width:40%;
+margin: auto;
 }
 
 #paymentmainpage>div:nth-child(1){
@@ -116,4 +122,8 @@ a{
 
 #accordion{
     width: 100%;
+}
+#dlasfjldfj{
+    width: 40%;
+    margin: auto;
 }

@@ -27,14 +27,14 @@ function Ordersummary(props) {
     let handlereduce=()=>{
         setcount(count-1)
     }
-    let mrp=0
+   
     let price=0
     localdata.forEach((el)=>{
-        mrp+=+el.mrp
+        // mrp+=+el.mrp
         price+=+el.price
 
     })
-    let main=price-150
+    let main=price-25
     let [viewall,setviewall]=useState(false)
     let handlestate=(state)=>{
         setviewall(true)
@@ -126,7 +126,7 @@ function Ordersummary(props) {
                             <h4>MRP Total</h4>
                             </div>
                             <div>
-                           <h4> ₹ {mrp}/-</h4>
+                           <h4> ₹ {localdata.length*100}/-</h4>
                             </div>
                             
                         </div>
@@ -135,7 +135,7 @@ function Ordersummary(props) {
                             <h4>Product Discount</h4>
                             </div>
                             <div>
-                           <h4> ₹ {mrp-price-150}/-</h4>
+                           <h4> ₹ {localdata.length*100-price-25}/-</h4>
                             </div>
                         </div>
                         {
@@ -146,7 +146,7 @@ function Ordersummary(props) {
                             </div>
                            
                             <div>
-                           <h4> ₹ {150}/-</h4>
+                           <h4> ₹ {25}/-</h4>
                             </div>
                         </div>: ""
                         }
@@ -159,7 +159,7 @@ function Ordersummary(props) {
                             </div>
                            
                             <div>
-                           <h4> ₹ {150}/-</h4>
+                           <h4> ₹ {25}/-</h4>
                             </div>
                         </div>: ""
                         }
@@ -172,8 +172,8 @@ function Ordersummary(props) {
                             <div>
                            {
                             viewall || inputdis?
-                            <h4>₹{main-150}/-</h4>:
-                            <h4> ₹{price-150}/-</h4>
+                            <h4>₹{main-25}/-</h4>:
+                            <h4> ₹{price-25}/-</h4>
                            }
                             </div>
                         </div>

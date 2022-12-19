@@ -8,10 +8,10 @@ import "./Paymentsuccess.css"
 // import Timer from './Timer'
 export const Paymentsuccess = () => {
     let localdata=JSON.parse(localStorage.getItem("alldata")) || []
-    let mrp=0
+    let mrp=100
     let price=0
     localdata.forEach((el)=>{
-        mrp+=+el.mrp
+        // mrp+=+el.mrp
         price+=+el.price
 
     })
@@ -38,7 +38,7 @@ export const Paymentsuccess = () => {
 
     useEffect(()=>{
         if(count==286){
-            navigate("/local")
+            navigate("/")
             
         }
         if(count<=0){
@@ -59,7 +59,10 @@ export const Paymentsuccess = () => {
     <div>
 
     <div id='paymentsuccessmain'>
+      <div id='dlfj'>
+
         <img src="https://secure.ccavenue.com/transaction/images/ccavenue-logo-100x15.png" alt="" />
+      </div>
         <div id='payingto'>
             <div>
             <p>Paying to</p>
@@ -67,7 +70,7 @@ export const Paymentsuccess = () => {
             </div>
             <div>
                 <p>Amount</p>
-                <h4>INR {price-150}.00</h4>
+                <h4>INR {price-25}.00</h4>
             </div>
            
         </div>
@@ -77,18 +80,18 @@ export const Paymentsuccess = () => {
              on your UPI mobile app within</p>
         </div>
         <div>
-          <div>
+          <div id='dlasfjldfj'>
             <h4>{fromattime(count)}  Sec</h4>
           </div>
           <div>
            
           </div>
         </div>
-        <div>
+        <div id='theja'>
             <img src="https://secure.ccavenue.com/transaction/images/powered-by-upi-logo.png" alt="" />
         </div>
     </div>
-    <div>
+    <div id='porewdvy'>
         powered By 
         <img src="https://secure.ccavenue.com/transaction/images/ccavenue-logo-100x15.png" alt="" />
     </div>

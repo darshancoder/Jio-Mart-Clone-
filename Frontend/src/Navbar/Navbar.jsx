@@ -7,6 +7,8 @@ import { MdLocationOn } from "react-icons/md";
 import { AiOutlineDown } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useState, useRef, useCallback } from "react";
+import {useNavigate} from "react-router-dom"
+import {useSelector} from "react-redux"
 // import axios from "axios";
 import {
   useDisclosure,
@@ -34,6 +36,15 @@ export const Navbar = () => {
   const [query, setQuery] = useState("");
   const [input, setInput] = useState("");
   const scrollRef = useRef();
+  const navigate=useNavigate()
+ let state=useSelector((state)=>{
+  return state
+ })
+// console.log(state)
+const {userData,isAuth}=state;
+const {Fname, Lname,email}=userData;
+
+console.log(state);
 
   const queryhandler = useCallback((el) => {
     setQuery(el);
@@ -68,6 +79,12 @@ export const Navbar = () => {
   }, [setQuery, throttletext]);
 
   // console.log(suggestion);
+  const Click=()=>{
+    navigate('/cartpage')
+  }
+  const Signin=()=>{
+    navigate('/user/login')
+  }
 
   return (
     // navbar-1
@@ -85,11 +102,11 @@ export const Navbar = () => {
             <DrawerCloseButton />
             <DrawerHeader style={{ backgroundColor: "#008ecc" }}>
               <div className={Style.drawerslide}>
-                <h2>Hello, Sign in</h2>
+                {isAuth?<h2>Hello {!!Fname?Fname.toUpperCase():null}</h2>:<h2 style={{"cursor":"pointer"}} onClick={Signin}>Sign in</h2>}
                 <div className={Style.buttnslider}>
                   <Button>
                     {" "}
-                    <Link to={"/signin"}>Account</Link>
+                    <Link to={"/user/account"}>Account</Link>
                   </Button>
                   <Button>Orders</Button>
                 </div>
@@ -178,14 +195,20 @@ export const Navbar = () => {
           <FaUser className={Style.usericons} />
           <h4>
             {" "}
-            <Link to={"/signin"}>Sign in / Sign up</Link>
+            <Link to={"/user/login"}>Sign In</Link>
+          </h4>
+          <h4>
+            {" "}
+            <Link to={"/user/signup"}>Sign Up</Link>
           </h4>
         </div>
 
         <div className={Style.cartNav}>
           <BsFillCartFill className={Style.carticon} />
           <h4>
-            <Link to={"/cart"}>Cart</Link>{" "}
+            {/* <Link to={"/cartpage"}>Cart</Link> */}
+            <p onClick={Click}>Cart</p>
+            
           </h4>
         </div>
       </div>
@@ -219,9 +242,9 @@ export const Navbar = () => {
             <MenuItem>
               <Link to={"/groceriesproducts"}>Groceries</Link>
             </MenuItem>
-            <MenuItem>Fruits & Vegetables</MenuItem>
-            <MenuItem>Dairy & Bakery</MenuItem>
-            <MenuItem>Staples</MenuItem>
+            <MenuItem><Link to="/fruits">Fruits & Vegetables</Link></MenuItem>
+            <MenuItem><Link to="/dairy">Dairy & Bakery</Link></MenuItem>
+            <MenuItem><Link to="/staples">Staples</Link></MenuItem>
             <MenuItem>Snacks & Branded Foods</MenuItem>
             <MenuItem>Beverages</MenuItem>
             <MenuItem>Personal Care</MenuItem>
@@ -244,7 +267,7 @@ export const Navbar = () => {
           </MenuButton>
 
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
-          <MenuItem>Apples & Pears</MenuItem>
+          <MenuItem><Link to={"/apples_pears"}>Apples & Pears</Link></MenuItem>
             <MenuItem>Avocada, Peach , Plum</MenuItem>
             <MenuItem>Banana, Melons & Coconut</MenuItem>
             <MenuItem>Cherries, Berries & Exotic Fruits </MenuItem>
@@ -264,7 +287,7 @@ export const Navbar = () => {
             </div>
           </MenuButton>
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
-            <MenuItem>Bathroom & Laundry</MenuItem>
+            <MenuItem><Link to="/HomeAppliance">Bathroom & Laundry</Link></MenuItem>
             <MenuItem>Disposables</MenuItem>
             <MenuItem>Furnishing</MenuItem>
             <MenuItem>Furniture</MenuItem>
@@ -284,7 +307,7 @@ export const Navbar = () => {
             </div>
           </MenuButton>
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
-            <MenuItem>Men</MenuItem>
+            <MenuItem><Link to={"/men"}>Men</Link></MenuItem>
             <MenuItem>
               Women
             </MenuItem>
@@ -303,7 +326,7 @@ export const Navbar = () => {
           </MenuButton>
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
             <MenuItem>
-              Mobiles & Tables
+              <Link to="/mobiles">Mobiles & Tables</Link>
             </MenuItem>
             <MenuItem>TV & Speaker</MenuItem>
             <MenuItem>Home Appliances</MenuItem>
@@ -328,7 +351,7 @@ export const Navbar = () => {
             </div>
           </MenuButton>
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
-            <MenuItem>Make-Up</MenuItem>
+            <MenuItem> <Link to="makeup">Make-Up </Link></MenuItem>
             <MenuItem>hair</MenuItem>
             <MenuItem>Skin Care</MenuItem>
             <MenuItem>Fragrances</MenuItem>
@@ -351,7 +374,7 @@ export const Navbar = () => {
             </div>
           </MenuButton>
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
-            <MenuItem>Auto Care</MenuItem>
+            <MenuItem><Link to="/autocare">Auto Care</Link></MenuItem>
             <MenuItem>Carpentry</MenuItem>
             <MenuItem>Electrical</MenuItem>
             <MenuItem>Hardware & Plumbing</MenuItem>
@@ -373,7 +396,7 @@ export const Navbar = () => {
             </div>
           </MenuButton>
           <MenuList style={{ backgroundColor: "#f2e8e8" }}>
-            <MenuItem>Toys & Games</MenuItem>
+            <MenuItem><Link to ="/toysgames">Toys & Games</Link></MenuItem>
             <MenuItem>
               Bags & Travel Luggage
             </MenuItem>

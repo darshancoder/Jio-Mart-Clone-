@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom';
+import { useToast } from '@chakra-ui/react';
 
 
 export default function ProductDetails() {
@@ -14,19 +15,18 @@ export default function ProductDetails() {
 
     const arr = location.pathname.split('/')
     // console.log(arr);
-
+    const toast=useToast();
     const [product, setProduct] = useState({})
-    let main=JSON.parse(localStorage.getItem("maindata")) || []
+    let main=JSON.parse(localStorage.getItem("alldata")) || []
     useEffect(() => {
         
 
         axios.get(`http://localhost:8080/${arr[1]}/${_id}`)
         .then((res)=>{
             setProduct(res.data)
-            // console.log(res.data)
-            main.push(res.data)
-            localStorage.setItem("maindata",JSON.stringify(main))
-          
+            console.log(res.data)
+            // main.push(res.data)
+            // localStorage.setItem("alldata",JSON.stringify(main))          
 
           })
         .catch((err)=>{
@@ -40,7 +40,27 @@ export default function ProductDetails() {
     const btnRef = React.useRef()
 
 
-    const handleClick= ()=>{}
+    const handleClick= ()=>{
+        axios.get(`http://localhost:8080/${arr[1]}/${_id}`)
+        .then((res)=>{
+            setProduct(res.data)
+            // console.log(res.data)
+            main.push(res.data)
+            localStorage.setItem("alldata",JSON.stringify(main))
+            toast({
+                title: 'Item added to cart.',
+                status: 'success',
+                duration: 9000,
+                position: "top",
+                isClosable: true,
+            })         
+
+          })
+        .catch((err)=>{
+            console.log(err);
+        })
+        
+    }
 
   return (
     <Box lineHeight="20px" backgroundColor={"white"}>
@@ -68,7 +88,7 @@ export default function ProductDetails() {
                     <Text>Inaugural Offer </Text>
                     <Text fontWeight={"700"}> Free Shipping</Text>
                 </Box>
-                <Button onClick={handleClick()}
+                <Button onClick={handleClick}
                  mt="20px" cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w="320px" color={"white"} colorScheme='twitter'>
                     Add TO Cart
                 </Button>

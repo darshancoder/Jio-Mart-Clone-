@@ -21,13 +21,15 @@ const theme = extendTheme({
 console.log(store)
 root.render(
 
-  <Provider store={store}>
     <BrowserRouter>
+   <Provider store={store}>
+
     <ChakraProvider theme={theme} resetCSS={false} >
         <App />
     </ChakraProvider>
+    </Provider>
     </BrowserRouter>
-  </Provider>
+ 
 
 
 
