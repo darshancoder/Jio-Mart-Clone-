@@ -7,7 +7,7 @@ const apples_pears = express.Router();
 apples_pears.get("/", async (req, res) => {
   const {orderBy} = req.query
   try {
-    const product =  orderBy.length == 0 ? await apples_pearsModel.find() : await apples_pearsModel.find().sort({'price': orderBy });
+    const product =  orderBy?.length == 0 ? await apples_pearsModel.find() : await apples_pearsModel.find().sort({'price': orderBy });
     res.send(product);
   } catch (err) {
     console.log(err);
