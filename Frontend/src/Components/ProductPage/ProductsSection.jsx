@@ -86,7 +86,7 @@ useEffect(() => {
         <Box backgroundColor={"white"} mt="20px"  p={["30px 20px"]}>
             <Text textAlign={"start"} mt="-5" color={"gray"} fontWeight="600">All Products</Text>
             {/* <ShowMore  maxHeight={860}> */}
-                <SimpleGrid  columns={[1,2,3,4]} spacing={10}> 
+                <SimpleGrid  columns={[2,2,3,4]} spacing={10}> 
                 {
                     product &&
                     product?.map((product)=>{
@@ -98,6 +98,7 @@ useEffect(() => {
                                   //  <Box textAlign={"start"}>
                                     Title={product.title}
                                     Price={product.price} 
+                                    // product ={product}
                                    // <Button css={css`&:hover {bacground-color:none;}`} cursor={"pointer"} color={"white"} backgroundColor={"#008ECC"} w={"100%"}>Add TO Cart</Button> 
                                     // Button={<Button cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w={"100%"} color={"white"} colorScheme='twitter'>Add TO Cart</Button>}
                                     // </Box> 

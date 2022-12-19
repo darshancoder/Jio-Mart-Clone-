@@ -2,6 +2,12 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cartpage from './Cartpage';
 import Data from './local';
+import Ordersummary from './Ordersummary';
+import { Otp } from './otp';
+import { Payment } from './Payment';
+import { Paymentsuccess } from './Paymentsuccess';
+import Products from './ProductPage/Products';
+import { Success } from './Success';
 import Products from './ProductPage/Products';
 import ProductDetails from './ProductPage/ProductDetails';
 
@@ -20,6 +26,11 @@ function Allroutes(props) {
             <Route path='/makeup' element={<Products url={`makeup`}/>} />
             <Route path='/autocare' element={<Products url={`autocare`}/>} />
             <Route path='/toysgames' element={<Products url={`toysgames`}/>} />
+            <Route path='/ordersummary' element={<Ordersummary/>}/>
+            <Route path='/payment' element={<Payment/>}/>
+            <Route path='/paymentsuccess' element={<Paymentsuccess/>}/>
+            <Route path='/success' element={<Success/>}/>
+            <Route path='/otp' element={<Otp/>}/>
             
             <Route path="/:path/productdetails/:_id" element={<ProductDetails />}/>
         </Routes>
@@ -27,3 +38,4 @@ function Allroutes(props) {
 }
 
 export default Allroutes;
+

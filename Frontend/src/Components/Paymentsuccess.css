@@ -1,0 +1,22 @@
+#paymentsuccessmain{
+    width: 40%;
+    /* border: 1px solid red; */
+    height: 60vh;
+    margin: auto;
+    margin-top: 10%;
+    background-color: white;
+}
+
+#payingto{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+#payingto>div{
+    line-height: 2px;
+}
+#spinner{
+    margin-top: 15%;
+
+}

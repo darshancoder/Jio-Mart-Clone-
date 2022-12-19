@@ -5,6 +5,10 @@ import Account from './my_account/Account';
 import Allroutes from './Components/Allroutes';
 import { Navbar } from './Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
+import { Footer } from './Navbar/Footer';
+
+
+
 
 function App() {
   return (
@@ -25,5 +29,6 @@ function App() {
 
 
 
+      
 
 export default App;
