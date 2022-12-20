@@ -195,7 +195,7 @@ console.log(isAuth)
         <div className={Style.userdiv}>
           <FaUser className={Style.usericons} />
           {isAuth?<h4 style={{"color":"white"}}>{Fname.toUpperCase()}</h4>:<><h4>
-            <Link   to={"/user/login"}><p style={{"color":"white"}}>Sign In</p></Link>
+            <Link   to={"/user/login"}><p style={{"color":"white"}}>Sign In / </p></Link>
           </h4>
           <h4>
             <Link to={"/user/signup"}><p  style={{"color":"white"}}>Sign Up</p></Link>
@@ -228,16 +228,16 @@ console.log(isAuth)
 
         {/* menu */}
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton  bg="none" border="none">
             {" "}
-            <div className={Style.navbar2style1}>
+            <Box className={Style.navbar2style1} >
               <p>Groceries</p>
               <AiOutlineDown style={{ color: "gray" }} />
-            </div>
+            </Box>
           </MenuButton>
 
           {/* MenuItems are not rendered unless Menu is open */}
-          <MenuList style={{ backgroundColor: "#f2e8e8" }}>
+          <MenuList bg="black">
             <MenuItem>
               <Link to={"/groceriesproducts"}>Groceries</Link>
             </MenuItem>
@@ -258,7 +258,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Premium Fruits</p>
               <AiOutlineDown style={{ color: "gray" }} />
@@ -279,7 +279,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Home & Kitchen</p>
               <AiOutlineDown style={{ color: "gray" }} />
@@ -299,7 +299,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Fashion</p>
               <AiOutlineDown style={{ color: "gray" }} />
@@ -317,7 +317,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Electronics</p>
               <AiOutlineDown style={{ color: "gray" }} />
@@ -343,7 +343,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Beauty</p>
               <AiOutlineDown style={{ color: "gray" }} />
@@ -366,7 +366,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Home Improvement</p>
               <AiOutlineDown style={{ color: "gray" }} />
@@ -388,7 +388,7 @@ console.log(isAuth)
         </Menu>
 
         <Menu isLazy>
-          <MenuButton>
+          <MenuButton bg="none" border="none">
             <div className={Style.navbar2style1}>
               <p>Sports, Toys & Luggage</p>
               <AiOutlineDown style={{ color: "gray" }} />
