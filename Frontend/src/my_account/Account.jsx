@@ -75,7 +75,7 @@ const Account = () => {
                         <ModalBody pl="3" pr="8">
                             <FormControl  >
                                 <FormLabel color={"#008ecc"} fontSize="10px"  mb={0} >FIRST NAME</FormLabel>
-                                <Input variant='flushed' borderTop={"0px"} borderRight={"0px"} borderLeft={"0px"} mb={4} size={"xs"} type='text' value="Bhpendra " onChange={handleInputChange} />
+                                <Input variant='flushed' borderTop={"0px"} borderRight={"0px"} borderLeft={"0px"} mb={4} size={"xs"} type='text' value="" onChange={handleInputChange} />
                                 <FormLabel color={"#008ecc"} fontSize="10px" mb={0}>LAST NAME</FormLabel>
                                 <Input variant='flushed' borderTop={"0px"} borderRight={"0px"} borderLeft={"0px"} mb={4} size={"xs"} type='text' value="Chandrakar " onChange={handleInputChange} />
                                 <HStack>

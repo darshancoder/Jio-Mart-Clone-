@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-// const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
 const user2Schema = mongoose.Schema({
     number:{
