@@ -66,12 +66,12 @@ export default function ProductDetails() {
     <Box lineHeight="20px" backgroundColor={"white"}>
         <Flex mt="150px" justifyContent={["space-evenly","space-evenly","space-evenly","space-evenly"]} gap="50px"  flexDirection={["column","column","column","row"]}>
             <Box>
-                <Img p={"20px"}  h={["auto"]} ml={["20px","0px","00px","200px"]}
+                <Img p={"20px"}  h={["auto"]} ml={["20px","0px","200px","200px"]}
                     css={css`&:hover {transition: .15s ease; -webkit-transform: scale(1);-ms-transform: scale(1);transform: scale(1.15);}`}
                     cursor={"pointer"} borderRadius="8px" width={["300px","360px","360px","420px"]} mt={"60px"}
                     src={product.image}/>
             </Box>
-            <Box textAlign={["center","center","center","left"]}>
+            <Box textAlign={["left","center","center","left"]}>
                 <Text lineHeight={'30px'} fontWeight={"750"} color="black" fontSize={"20px"}>
                     {product.title}
                 </Text>
@@ -80,16 +80,16 @@ export default function ProductDetails() {
                 M.R.P. <Text as="b"  fontSize={"18px"}> ₹ {product.price}</Text> Inclusive of all taxes
                 {/* </Flex> */}
                 <Text fontWeight={"650"} color="green.400">In Stock</Text>
-                <Box display={"flex"}  fontSize={"15px"} gap="5px" textAlign={["center","center","center","left"]} ml={['110px','240px','300px','0px']}>
+                <Box display={"flex"}  fontSize={"15px"} gap="5px" textAlign={["left","center","center","left"]} ml={['0px','240px','300px','0px']}>
                 <Text>Sold by </Text>
                 <Text><Link to='#' style={{color:"#008ECC", textDecoration:"none"}}>Reliance Retail</Link></Text>
                 </Box>
-                <Box  display={"flex"} textAlign={["center","center","center","left"]} ml={['80px','240px','270px','0px']} gap="5px">
+                <Box  display={"flex"} textAlign={["left","center","center","left"]} ml={['0px','240px','270px','0px']} gap="5px">
                     <Text>Inaugural Offer </Text>
                     <Text fontWeight={"700"}> Free Shipping</Text>
                 </Box>
                 <Button onClick={handleClick}
-                 mt="20px" cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w="320px" color={"white"} colorScheme='twitter'>
+                ml={['17px', '0px', '0px', '0px']} cursor={"pointer"} border="none" backgroundColor={"#008ECC"} w="320px" color={"white"} colorScheme='twitter'>
                     Add TO Cart
                 </Button>
 
@@ -99,7 +99,7 @@ export default function ProductDetails() {
                 <Text mt="-1px" color="gray" fontSize={"12px"}>Check for estimated delivery date</Text>
                 <Text fontWeight={"600"}>Available Offers 11</Text>
 
-                <Flex ml={["90px","16px","35px","30px"]} gap={"30px"} flexDirection={["column","row","row","row"]}>
+                <Flex ml={["70px","16px","35px","30px"]} gap={"30px"} flexDirection={["column","row","row","row"]}>
                     <Box w="200px" h="120px" p="5px" borderRadius={"8px"} border={"1px solid"}>
                         <Button p="10px" cursor={"pointer"} bgColor={"white"} fontSize={"10px"} h={"15px"} color={"green"} borderColor={"green"}>BUY MORE SAVE MORE</Button>
                         <Text fontSize={"13px"}>Get Sugar at ₹ 9 only on Grocery Shopping of Min. ₹ 1499.</Text>
@@ -119,7 +119,7 @@ export default function ProductDetails() {
                 </Flex>
 
                 <Box>
-                <Button ref={btnRef} ml={["150px", "630px", "640px","640px"]}border="none" mt='10px' fontSize={"13px"} bgColor={"white"} color='red' onClick={onOpen}>
+                <Button ref={btnRef} ml={["210px", "630px", "640px","640px"]}border="none" mt='10px' fontSize={"13px"} bgColor={"white"} color='red' onClick={onOpen}>
                     See More
                 </Button>
                 <Drawer

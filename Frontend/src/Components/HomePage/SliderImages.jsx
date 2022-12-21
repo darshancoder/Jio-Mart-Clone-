@@ -1,4 +1,4 @@
-export const countries = [
+export const jiomart = [
     {
         image: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1670993067_Web_Mumbai_PremiumFruits.jpg",
     },
